@@ -1,0 +1,180 @@
+2019-07-24 16:08:25 INFO [org.hibernate.validator.internal.util.Version]: HV000001: Hibernate Validator 6.0.14.Final
+2019-07-24 16:08:26 INFO [com.test.helloworld.Application]: Starting Application on USER-20190104NK with PID 7392 (G:\workspace_2019\springboot-web-oracle\target\classes started by Administrator in G:\workspace_2019\springboot-web-oracle)
+2019-07-24 16:08:26 INFO [com.test.helloworld.Application]: No active profile set, falling back to default profiles: default
+2019-07-24 16:08:32 INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer]: Tomcat initialized with port(s): 8888 (http)
+2019-07-24 16:08:33 INFO [org.springframework.web.context.ContextLoader]: Root WebApplicationContext: initialization completed in 6256 ms
+2019-07-24 16:08:35 INFO [org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor]: Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-24 16:08:36 INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer]: Tomcat started on port(s): 8888 (http) with context path ''
+2019-07-24 16:08:36 INFO [com.test.helloworld.Application]: Started Application in 11.69 seconds (JVM running for 13.076)
+2019-07-24 16:08:53 INFO [org.springframework.web.servlet.DispatcherServlet]: Initializing Servlet 'dispatcherServlet'
+2019-07-24 16:08:53 INFO [org.springframework.web.servlet.DispatcherServlet]: Completed initialization in 29 ms
+2019-07-24 16:08:53 INFO [com.zaxxer.hikari.HikariDataSource]: HikariPool-1 - Starting...
+2019-07-24 16:08:53 WARN [com.zaxxer.hikari.util.DriverDataSource]: Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2019-07-24 16:08:56 INFO [com.zaxxer.hikari.pool.PoolBase]: HikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+2019-07-24 16:08:56 INFO [com.zaxxer.hikari.HikariDataSource]: HikariPool-1 - Start completed.
+2019-07-24 16:08:56 INFO [com.test.helloworld.service.impl.MercuryUserServiceImpl]: / by zero
+2019-07-24 16:09:23 INFO [com.test.helloworld.service.impl.MercuryUserServiceImpl]: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: ORA-00001: 违反唯一约束条件 (TEST.PK_USER_NAME)
+
+### The error may exist in file [G:\workspace_2019\springboot-web-oracle\target\classes\mapper\MercuryUserMapper.xml]
+### The error may involve com.test.helloworld.dao.MercuryUserDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into mercury_user (    user_id,    user_name,    status,    is_admin,    added_by,    added_date,    updated_by,    updated_date,    name,    password   )values(    ?,    ?,    ?,    ?,    ?,    ?,    ?,    ?,    ?,    ?   )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: ORA-00001: 违反唯一约束条件 (TEST.PK_USER_NAME)
+
+; ORA-00001: 违反唯一约束条件 (TEST.PK_USER_NAME)
+; nested exception is java.sql.SQLIntegrityConstraintViolationException: ORA-00001: 违反唯一约束条件 (TEST.PK_USER_NAME)
+
+2019-07-24 16:12:03 INFO [org.hibernate.validator.internal.util.Version]: HV000001: Hibernate Validator 6.0.14.Final
+2019-07-24 16:12:03 INFO [com.test.helloworld.Application]: Starting Application on USER-20190104NK with PID 7752 (G:\workspace_2019\springboot-web-oracle\target\classes started by Administrator in G:\workspace_2019\springboot-web-oracle)
+2019-07-24 16:12:03 INFO [com.test.helloworld.Application]: No active profile set, falling back to default profiles: default
+2019-07-24 16:12:09 INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer]: Tomcat initialized with port(s): 8888 (http)
+2019-07-24 16:12:09 INFO [org.springframework.web.context.ContextLoader]: Root WebApplicationContext: initialization completed in 5963 ms
+2019-07-24 16:12:11 INFO [org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor]: Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-24 16:12:12 INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer]: Tomcat started on port(s): 8888 (http) with context path ''
+2019-07-24 16:12:12 INFO [com.test.helloworld.Application]: Started Application in 10.298 seconds (JVM running for 11.438)
+2019-07-24 16:12:19 INFO [org.springframework.web.servlet.DispatcherServlet]: Initializing Servlet 'dispatcherServlet'
+2019-07-24 16:12:19 INFO [org.springframework.web.servlet.DispatcherServlet]: Completed initialization in 22 ms
+2019-07-24 16:12:19 INFO [com.zaxxer.hikari.HikariDataSource]: HikariPool-1 - Starting...
+2019-07-24 16:12:19 WARN [com.zaxxer.hikari.util.DriverDataSource]: Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2019-07-24 16:12:21 INFO [com.zaxxer.hikari.pool.PoolBase]: HikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+2019-07-24 16:12:21 INFO [com.zaxxer.hikari.HikariDataSource]: HikariPool-1 - Start completed.
+2019-07-24 16:12:22 INFO [com.test.helloworld.service.impl.MercuryUserServiceImpl]: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: ORA-00001: 违反唯一约束条件 (TEST.PK_USER_NAME)
+
+### The error may exist in file [G:\workspace_2019\springboot-web-oracle\target\classes\mapper\MercuryUserMapper.xml]
+### The error may involve com.test.helloworld.dao.MercuryUserDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into mercury_user (    user_id,    user_name,    status,    is_admin,    added_by,    added_date,    updated_by,    updated_date,    name,    password   )values(    ?,    ?,    ?,    ?,    ?,    ?,    ?,    ?,    ?,    ?   )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: ORA-00001: 违反唯一约束条件 (TEST.PK_USER_NAME)
+
+; ORA-00001: 违反唯一约束条件 (TEST.PK_USER_NAME)
+; nested exception is java.sql.SQLIntegrityConstraintViolationException: ORA-00001: 违反唯一约束条件 (TEST.PK_USER_NAME)
+
+2019-07-24 16:13:06 INFO [org.hibernate.validator.internal.util.Version]: HV000001: Hibernate Validator 6.0.14.Final
+2019-07-24 16:13:07 INFO [com.test.helloworld.Application]: Starting Application on USER-20190104NK with PID 7792 (G:\workspace_2019\springboot-web-oracle\target\classes started by Administrator in G:\workspace_2019\springboot-web-oracle)
+2019-07-24 16:13:07 INFO [com.test.helloworld.Application]: No active profile set, falling back to default profiles: default
+2019-07-24 16:13:13 INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer]: Tomcat initialized with port(s): 8888 (http)
+2019-07-24 16:13:14 INFO [org.springframework.web.context.ContextLoader]: Root WebApplicationContext: initialization completed in 6518 ms
+2019-07-24 16:13:16 INFO [org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor]: Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-24 16:13:17 INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer]: Tomcat started on port(s): 8888 (http) with context path ''
+2019-07-24 16:13:17 INFO [com.test.helloworld.Application]: Started Application in 11.471 seconds (JVM running for 12.503)
+2019-07-24 16:13:40 INFO [org.springframework.web.servlet.DispatcherServlet]: Initializing Servlet 'dispatcherServlet'
+2019-07-24 16:13:40 INFO [org.springframework.web.servlet.DispatcherServlet]: Completed initialization in 24 ms
+2019-07-24 16:13:40 INFO [com.zaxxer.hikari.HikariDataSource]: HikariPool-1 - Starting...
+2019-07-24 16:13:40 WARN [com.zaxxer.hikari.util.DriverDataSource]: Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2019-07-24 16:13:43 INFO [com.zaxxer.hikari.pool.PoolBase]: HikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+2019-07-24 16:13:43 INFO [com.zaxxer.hikari.HikariDataSource]: HikariPool-1 - Start completed.
+2019-07-24 16:13:43 INFO [com.test.helloworld.service.impl.MercuryUserServiceImpl]: / by zero
+2019-07-24 16:15:36 INFO [org.hibernate.validator.internal.util.Version]: HV000001: Hibernate Validator 6.0.14.Final
+2019-07-24 16:15:37 INFO [com.test.helloworld.Application]: Starting Application on USER-20190104NK with PID 7712 (G:\workspace_2019\springboot-web-oracle\target\classes started by Administrator in G:\workspace_2019\springboot-web-oracle)
+2019-07-24 16:15:37 INFO [com.test.helloworld.Application]: No active profile set, falling back to default profiles: default
+2019-07-24 16:15:42 INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer]: Tomcat initialized with port(s): 8888 (http)
+2019-07-24 16:15:43 INFO [org.springframework.web.context.ContextLoader]: Root WebApplicationContext: initialization completed in 6028 ms
+2019-07-24 16:15:46 INFO [org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor]: Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-24 16:15:47 INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer]: Tomcat started on port(s): 8888 (http) with context path ''
+2019-07-24 16:15:47 INFO [com.test.helloworld.Application]: Started Application in 11.567 seconds (JVM running for 12.874)
+2019-07-24 16:15:57 INFO [org.springframework.web.servlet.DispatcherServlet]: Initializing Servlet 'dispatcherServlet'
+2019-07-24 16:15:57 INFO [org.springframework.web.servlet.DispatcherServlet]: Completed initialization in 25 ms
+2019-07-24 16:15:57 INFO [com.zaxxer.hikari.HikariDataSource]: HikariPool-1 - Starting...
+2019-07-24 16:15:57 WARN [com.zaxxer.hikari.util.DriverDataSource]: Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2019-07-24 16:16:00 INFO [com.zaxxer.hikari.pool.PoolBase]: HikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+2019-07-24 16:16:00 INFO [com.zaxxer.hikari.HikariDataSource]: HikariPool-1 - Start completed.
+2019-07-24 16:16:00 INFO [com.test.helloworld.service.impl.MercuryUserServiceImpl]: / by zero
+2019-07-24 16:59:25 INFO [org.hibernate.validator.internal.util.Version]: HV000001: Hibernate Validator 6.0.14.Final
+2019-07-24 16:59:26 INFO [com.test.helloworld.Application]: Starting Application on USER-20190104NK with PID 5812 (G:\workspace_2019\springboot-web-oracle\target\classes started by Administrator in G:\workspace_2019\springboot-web-oracle)
+2019-07-24 16:59:26 INFO [com.test.helloworld.Application]: No active profile set, falling back to default profiles: default
+2019-07-24 16:59:31 INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer]: Tomcat initialized with port(s): 8888 (http)
+2019-07-24 16:59:31 INFO [org.springframework.web.context.ContextLoader]: Root WebApplicationContext: initialization completed in 5224 ms
+2019-07-24 16:59:33 INFO [org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor]: Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-24 16:59:34 INFO [org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping]: Adding welcome page template: index
+2019-07-24 16:59:34 INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer]: Tomcat started on port(s): 8888 (http) with context path ''
+2019-07-24 16:59:34 INFO [com.test.helloworld.Application]: Started Application in 8.997 seconds (JVM running for 9.893)
+2019-07-24 16:59:44 INFO [org.springframework.web.servlet.DispatcherServlet]: Initializing Servlet 'dispatcherServlet'
+2019-07-24 16:59:44 INFO [org.springframework.web.servlet.DispatcherServlet]: Completed initialization in 37 ms
+2019-07-24 17:00:12 INFO [org.hibernate.validator.internal.util.Version]: HV000001: Hibernate Validator 6.0.14.Final
+2019-07-24 17:00:13 INFO [com.test.helloworld.Application]: Starting Application on USER-20190104NK with PID 7368 (G:\workspace_2019\springboot-web-oracle\target\classes started by Administrator in G:\workspace_2019\springboot-web-oracle)
+2019-07-24 17:00:13 INFO [com.test.helloworld.Application]: No active profile set, falling back to default profiles: default
+2019-07-24 17:00:18 INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer]: Tomcat initialized with port(s): 8888 (http)
+2019-07-24 17:00:19 INFO [org.springframework.web.context.ContextLoader]: Root WebApplicationContext: initialization completed in 6295 ms
+2019-07-24 17:00:21 INFO [org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor]: Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-24 17:00:22 INFO [org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping]: Adding welcome page template: index
+2019-07-24 17:00:23 INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer]: Tomcat started on port(s): 8888 (http) with context path ''
+2019-07-24 17:00:23 INFO [com.test.helloworld.Application]: Started Application in 11.088 seconds (JVM running for 12.17)
+2019-07-24 17:00:29 INFO [org.springframework.web.servlet.DispatcherServlet]: Initializing Servlet 'dispatcherServlet'
+2019-07-24 17:00:30 INFO [org.springframework.web.servlet.DispatcherServlet]: Completed initialization in 25 ms
+2019-07-24 17:00:48 INFO [com.zaxxer.hikari.HikariDataSource]: HikariPool-1 - Starting...
+2019-07-24 17:00:48 WARN [com.zaxxer.hikari.util.DriverDataSource]: Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2019-07-24 17:00:51 INFO [com.zaxxer.hikari.pool.PoolBase]: HikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+2019-07-24 17:00:51 INFO [com.zaxxer.hikari.HikariDataSource]: HikariPool-1 - Start completed.
+2019-07-24 17:00:52 INFO [com.test.helloworld.service.impl.MercuryUserServiceImpl]: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: ORA-00001: 违反唯一约束条件 (TEST.PK_USER_NAME)
+
+### The error may exist in file [G:\workspace_2019\springboot-web-oracle\target\classes\mapper\MercuryUserMapper.xml]
+### The error may involve com.test.helloworld.dao.MercuryUserDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into mercury_user (    user_id,    user_name,    status,    is_admin,    added_by,    added_date,    updated_by,    updated_date,    name,    password   )values(    ?,    ?,    ?,    ?,    ?,    ?,    ?,    ?,    ?,    ?   )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: ORA-00001: 违反唯一约束条件 (TEST.PK_USER_NAME)
+
+; ORA-00001: 违反唯一约束条件 (TEST.PK_USER_NAME)
+; nested exception is java.sql.SQLIntegrityConstraintViolationException: ORA-00001: 违反唯一约束条件 (TEST.PK_USER_NAME)
+
+2019-07-24 17:01:11 INFO [com.test.helloworld.service.impl.MercuryUserServiceImpl]: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: ORA-00001: 违反唯一约束条件 (TEST.PK_USER_NAME)
+
+### The error may exist in file [G:\workspace_2019\springboot-web-oracle\target\classes\mapper\MercuryUserMapper.xml]
+### The error may involve com.test.helloworld.dao.MercuryUserDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into mercury_user (    user_id,    user_name,    status,    is_admin,    added_by,    added_date,    updated_by,    updated_date,    name,    password   )values(    ?,    ?,    ?,    ?,    ?,    ?,    ?,    ?,    ?,    ?   )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: ORA-00001: 违反唯一约束条件 (TEST.PK_USER_NAME)
+
+; ORA-00001: 违反唯一约束条件 (TEST.PK_USER_NAME)
+; nested exception is java.sql.SQLIntegrityConstraintViolationException: ORA-00001: 违反唯一约束条件 (TEST.PK_USER_NAME)
+
+2019-07-24 18:27:56 INFO [org.hibernate.validator.internal.util.Version]: HV000001: Hibernate Validator 6.0.14.Final
+2019-07-24 18:27:57 INFO [com.test.helloworld.Application]: Starting Application on USER-20190104NK with PID 7204 (G:\workspace_2019\springboot-web-oracle\target\classes started by Administrator in G:\workspace_2019\springboot-web-oracle)
+2019-07-24 18:27:57 INFO [com.test.helloworld.Application]: No active profile set, falling back to default profiles: default
+2019-07-24 18:28:01 INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer]: Tomcat initialized with port(s): 8888 (http)
+2019-07-24 18:28:01 INFO [org.springframework.web.context.ContextLoader]: Root WebApplicationContext: initialization completed in 4467 ms
+2019-07-24 18:28:06 INFO [org.hibernate.validator.internal.util.Version]: HV000001: Hibernate Validator 6.0.14.Final
+2019-07-24 18:28:06 INFO [com.test.helloworld.Application]: Starting Application on USER-20190104NK with PID 6720 (G:\workspace_2019\springboot-web-oracle\target\classes started by Administrator in G:\workspace_2019\springboot-web-oracle)
+2019-07-24 18:28:06 INFO [com.test.helloworld.Application]: No active profile set, falling back to default profiles: default
+2019-07-24 18:28:10 INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer]: Tomcat initialized with port(s): 8888 (http)
+2019-07-24 18:28:11 INFO [org.springframework.web.context.ContextLoader]: Root WebApplicationContext: initialization completed in 4547 ms
+2019-07-24 18:28:12 INFO [org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor]: Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-24 18:28:13 INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer]: Tomcat started on port(s): 8888 (http) with context path ''
+2019-07-24 18:28:13 INFO [com.test.helloworld.Application]: Started Application in 7.63 seconds (JVM running for 8.559)
+2019-07-24 18:28:25 INFO [org.springframework.web.servlet.DispatcherServlet]: Initializing Servlet 'dispatcherServlet'
+2019-07-24 18:28:25 INFO [org.springframework.web.servlet.DispatcherServlet]: Completed initialization in 22 ms
+2019-07-24 18:31:28 INFO [org.hibernate.validator.internal.util.Version]: HV000001: Hibernate Validator 6.0.14.Final
+2019-07-24 18:31:29 INFO [com.test.helloworld.Application]: Starting Application on USER-20190104NK with PID 6852 (G:\workspace_2019\springboot-web-oracle\target\classes started by Administrator in G:\workspace_2019\springboot-web-oracle)
+2019-07-24 18:31:29 INFO [com.test.helloworld.Application]: No active profile set, falling back to default profiles: default
+2019-07-24 18:31:33 INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer]: Tomcat initialized with port(s): 8888 (http)
+2019-07-24 18:31:33 INFO [org.springframework.web.context.ContextLoader]: Root WebApplicationContext: initialization completed in 4660 ms
+2019-07-24 18:31:35 INFO [org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor]: Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-24 18:31:36 INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer]: Tomcat started on port(s): 8888 (http) with context path ''
+2019-07-24 18:31:36 INFO [com.test.helloworld.Application]: Started Application in 7.998 seconds (JVM running for 8.804)
+2019-07-24 18:31:42 INFO [org.springframework.web.servlet.DispatcherServlet]: Initializing Servlet 'dispatcherServlet'
+2019-07-24 18:31:42 INFO [org.springframework.web.servlet.DispatcherServlet]: Completed initialization in 18 ms
+2019-07-24 18:32:10 INFO [org.hibernate.validator.internal.util.Version]: HV000001: Hibernate Validator 6.0.14.Final
+2019-07-24 18:32:10 INFO [com.test.helloworld.Application]: Starting Application on USER-20190104NK with PID 6292 (G:\workspace_2019\springboot-web-oracle\target\classes started by Administrator in G:\workspace_2019\springboot-web-oracle)
+2019-07-24 18:32:10 INFO [com.test.helloworld.Application]: No active profile set, falling back to default profiles: default
+2019-07-24 18:32:15 INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer]: Tomcat initialized with port(s): 8888 (http)
+2019-07-24 18:32:15 INFO [org.springframework.web.context.ContextLoader]: Root WebApplicationContext: initialization completed in 4868 ms
+2019-07-24 18:32:17 INFO [org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor]: Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-24 18:32:17 INFO [org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping]: Adding welcome page template: index
+2019-07-24 18:32:18 INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer]: Tomcat started on port(s): 8888 (http) with context path ''
+2019-07-24 18:32:18 INFO [com.test.helloworld.Application]: Started Application in 8.477 seconds (JVM running for 9.198)
+2019-07-24 18:32:20 INFO [org.springframework.web.servlet.DispatcherServlet]: Initializing Servlet 'dispatcherServlet'
+2019-07-24 18:32:21 INFO [org.springframework.web.servlet.DispatcherServlet]: Completed initialization in 22 ms
+2019-07-24 18:34:38 INFO [org.hibernate.validator.internal.util.Version]: HV000001: Hibernate Validator 6.0.14.Final
+2019-07-24 18:34:38 INFO [com.test.helloworld.Application]: Starting Application on USER-20190104NK with PID 5900 (G:\workspace_2019\springboot-web-oracle\target\classes started by Administrator in G:\workspace_2019\springboot-web-oracle)
+2019-07-24 18:34:38 INFO [com.test.helloworld.Application]: No active profile set, falling back to default profiles: default
+2019-07-24 18:34:42 INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer]: Tomcat initialized with port(s): 8888 (http)
+2019-07-24 18:34:42 INFO [org.springframework.web.context.ContextLoader]: Root WebApplicationContext: initialization completed in 4376 ms
+2019-07-24 18:34:44 INFO [org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor]: Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-24 18:34:44 INFO [org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping]: Adding welcome page template: index
+2019-07-24 18:34:45 INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer]: Tomcat started on port(s): 8888 (http) with context path ''
+2019-07-24 18:34:45 INFO [com.test.helloworld.Application]: Started Application in 7.42 seconds (JVM running for 8.194)
+2019-07-24 18:35:00 INFO [org.springframework.web.servlet.DispatcherServlet]: Initializing Servlet 'dispatcherServlet'
+2019-07-24 18:35:00 INFO [org.springframework.web.servlet.DispatcherServlet]: Completed initialization in 19 ms
