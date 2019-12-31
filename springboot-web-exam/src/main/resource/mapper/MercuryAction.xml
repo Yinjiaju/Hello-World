@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.test.helloworld.dao.MercuryActionDao">
+	
+	<resultMap type="com.test.helloworld.domain.MercuryAction" id="mercuryAction">
+		<result column="ACTION_ID" property="actionId"/>
+		<result column="COMPONENT_ID" property="componentId"/>
+		<result column="COMPONENT_NAME" property="componentName"/>
+		<result column="DISPLAY_NAME" property="displayName"/>
+	</resultMap>
+	<select id="getAll" resultMap="mercuryAction">
+		select * from mercury_action
+	</select>
+	
+	
+</mapper>
