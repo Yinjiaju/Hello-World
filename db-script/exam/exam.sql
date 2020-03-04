@@ -103,7 +103,7 @@ create unique index PK_EXAM_TITLE on EXAM_TITLE (TITLE_ID);
 
 
 
-4.题库答案表： exam_resuts_details
+4.题库答案表： exam_results_details
 	--result_id  答案id
 	result_name 答案名称
 	result_isTrue 是否为正确答案
@@ -117,10 +117,10 @@ create unique index PK_EXAM_TITLE on EXAM_TITLE (TITLE_ID);
 	解决方案：list集合插入随机数，然后获取随机数大的前几个
 
 
-create table exam_resuts_details (
+create table exam_results_details (
 		--result_id number(10),
 		result_name varchar2(2000),
-		result_isTrue number(10),
+		result_isTrue char(1),
 		title_id number(10),
 		added_by  varchar2(100),
 		added_date  varchar2(100),
@@ -176,12 +176,12 @@ create unique index PK_EXAM_TEST_HISTORY on EXAM_TEST_HISTORY (TEST_ID);
 create table 答题明细表：exam_test_history_detail (
 		test_id  varchar2(100),
 		test_name  varchar2(100),
-		test_userId  varchar2(100),
+		test_userId  number(10),
 		test_userName  varchar2(100),
 		test_title_id varchar2(100),
 		test_title_userResult	varchar2(100),
 		test_title_checkResult varchar2(100),
-		test_userScore number(10),
+		test_userScore varchar2(100),
 		added_by  varchar2(100),
 		added_date  varchar2(100),
 		updated_by  varchar2(100),

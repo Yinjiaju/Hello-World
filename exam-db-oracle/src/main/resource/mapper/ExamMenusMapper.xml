@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.test.exam.dao.ExamMenusDao">
+
+private Integer menuId;
+	private String menuName;
+	private String addedBy;
+	private String addedDate;
+	private String updatedBy;
+	private String updatedDate;
+
+	<resultMap id="examMenusMap" type="com.test.exam.domain.ExamMenus">
+		<result property="menuId" column="user_id" />
+		<result property="menuName" column="user_name" />
+		<result property="status" column="status" />
+		<result property="addedBy" column="added_by" />s
+		<result property="addedDate" column="added_date" />
+		<result property="updatedBy" column="updated_by" />
+		<result property="updatedDate" column="updated_date" />
+		<result property="name" column="name" />
+		<result property="password" column="password" />
+	</resultMap>
+	
+	<select id="getAllUsers" resultMap="userMap" >
+		select * from mercury_user where nvl(status,0)=0
+	
+	</select>
+	
+	<insert id="insert"  parameterType="com.test.exam.domain.MercuryUser" >
+		<selectKey resultType="int" keyProperty="userId" order="BEFORE" keyColumn="user_id">
+			select nvl(max(user_id),0)+1 as user_id from mercury_user
+		</selectKey>
+		insert into mercury_user (
+			user_id,
+			user_name,
+			status,
+			is_admin,
+			added_by,
+			added_date,
+			updated_by,
+			updated_date,
+			name,
+			password
+		)values(
+			#{userId,jdbcType=INTEGER},
+			#{userName,jdbcType=VARCHAR},
+			#{status,jdbcType=VARCHAR},
+			#{isAdmin,jdbcType=VARCHAR},
+			#{addedBy,jdbcType=VARCHAR},
+			#{addedDate,jdbcType=VARCHAR},
+			#{updatedBy,jdbcType=VARCHAR},
+			#{updatedDate,jdbcType=VARCHAR},
+			#{name,jdbcType=VARCHAR},
+			#{password}
+		)
+	</insert>
+	
+	<insert id="insertUserBak"  parameterType="com.test.exam.domain.MercuryUser" >
+		insert into mercury_user_bak (
+			user_id,
+			user_name,
+			status,
+			is_admin,
+			added_by,
+			added_date,
+			updated_by,
+			updated_date,
+			name,
+			password
+		)values(
+			#{userId,jdbcType=INTEGER},
+			#{userName,jdbcType=VARCHAR},
+			#{status},
+			#{isAdmin},
+			#{addedBy},
+			#{addedDate},
+			#{updatedBy},
+			#{updatedDate},
+			#{name},
+			#{password}
+		)
+	</insert>
+	
+</mapper>
