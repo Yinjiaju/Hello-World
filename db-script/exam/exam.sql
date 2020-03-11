@@ -190,3 +190,26 @@ create table 答题明细表：exam_test_history_detail (
 	);
   
 
+
+---oracle增加序列器
+declare
+ 	iCnt num :=0;
+begin	
+ 	select count(1) into num  from user_sequences where sequence_name = 'EXAM_USER_SEQ'
+ 	if num = 1 then
+ 		execute immediate 'drop sequence EXAM_USER_SEQ';
+ 	end if;
+ 	execute immediate '
+		create sequence EXAM_USER_SEQ 
+		minvalue 1
+		maxvalue 9999999999999999999999999999
+		start with 1
+		increment by 1
+		nocache';
+end;
+/
+ 	
+
+	
+	
+	
