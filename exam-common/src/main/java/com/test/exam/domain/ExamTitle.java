@@ -19,6 +19,7 @@ public class ExamTitle implements Serializable {
 	private String titleChapter;
 	private String titleKnowledge;
 	private Integer uuId;//用来建立随机数的
+	private String status;
 	public Integer getTitleId() {
 		return titleId;
 	}
@@ -120,5 +121,11 @@ public class ExamTitle implements Serializable {
 	public void setUuId(Integer uuId) {
 		this.uuId = uuId;
 	}
+    public String getStatus() {
+        return status;
+    }
+    public void setStatus(String status) {
+        this.status = status;
+    }
 	
 }

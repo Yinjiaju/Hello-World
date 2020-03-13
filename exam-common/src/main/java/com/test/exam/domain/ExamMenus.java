@@ -15,6 +15,7 @@ public class ExamMenus implements Serializable{
 	private String addedDate;
 	private String updatedBy;
 	private String updatedDate;
+	private String status;
 	public Integer getMenuId() {
 		return menuId;
 	}
@@ -61,6 +62,12 @@ public class ExamMenus implements Serializable{
 		this.updatedBy = updatedBy;
 		this.updatedDate = updatedDate;
 	}
+    public String getStatus() {
+        return status;
+    }
+    public void setStatus(String status) {
+        this.status = status;
+    }
 	
 	
 }

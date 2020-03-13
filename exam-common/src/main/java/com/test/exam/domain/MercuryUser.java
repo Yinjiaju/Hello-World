@@ -13,7 +13,6 @@ public class MercuryUser  implements Serializable{
     private String updatedDate;
     private String name;
     private String password;
-    
     public Integer getUserId() {
         return userId;
     }

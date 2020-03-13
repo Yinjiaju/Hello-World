@@ -18,6 +18,7 @@ public class ExamTestHistory implements Serializable{
 	private Integer testUserId;
 	private String testUserName;
 	private BigDecimal testUserScores;
+	private String status;
 	public String getTestId() {
 		return testId;
 	}
@@ -86,6 +87,24 @@ public class ExamTestHistory implements Serializable{
 		this.testUserName = testUserName;
 		this.testUserScores = testUserScores;
 	}
+    public String getUpdatedBy() {
+        return updatedBy;
+    }
+    public void setUpdatedBy(String updatedBy) {
+        this.updatedBy = updatedBy;
+    }
+    public String getUpdatedDate() {
+        return updatedDate;
+    }
+    public void setUpdatedDate(String updatedDate) {
+        this.updatedDate = updatedDate;
+    }
+    public String getStatus() {
+        return status;
+    }
+    public void setStatus(String status) {
+        this.status = status;
+    }
 	
 	
 }

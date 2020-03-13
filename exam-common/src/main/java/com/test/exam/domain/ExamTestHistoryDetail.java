@@ -18,6 +18,7 @@ public class ExamTestHistoryDetail implements Serializable{
 	private String updatedBy;
 	private String updatedDate;
 	private String sortId;
+	private String status;
 	public String getTestId() {
 		return testId;
 	}
@@ -109,5 +110,11 @@ public class ExamTestHistoryDetail implements Serializable{
 		this.updatedDate = updatedDate;
 		this.sortId = sortId;
 	}
+    public String getStatus() {
+        return status;
+    }
+    public void setStatus(String status) {
+        this.status = status;
+    }
 	
 }
