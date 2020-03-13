@@ -42,7 +42,8 @@ create unique index PK_EXAM_USER on EXAM_USER (USER_ID);
 		added_by  varchar2(100),
 		added_date  varchar2(100),
 		updated_by  varchar2(100),
-		updated_date  varchar2(100)
+		updated_date  varchar2(100),
+		status varchar2(10)
 	);
   
 -- Create/Recreate indexes 
@@ -65,7 +66,8 @@ create unique index PK_EXAM_MENUS on EXAM_MENUS (MENU_ID);
 		added_by  varchar2(100),
 		added_date  varchar2(100),
 		updated_by  varchar2(100),
-		updated_date  varchar2(100)
+		updated_date  varchar2(100),
+		status varchar2(10)
 	);
   
 -- Create/Recreate indexes 
@@ -95,7 +97,8 @@ create unique index PK_EXAM_MENUS_DETAIL on EXAM_MENUS_DETAIL (MENU_DETAIL_ID);
 		updated_date  varchar2(100),
 		title_level  varchar2(100),
 		tilte_chapter  varchar2(100),
-		tilte_knowledge  varchar2(100)
+		tilte_knowledge  varchar2(100),
+		status varchar2(10)
 	);
   
 -- Create/Recreate indexes 
@@ -125,7 +128,8 @@ create table exam_results_details (
 		added_by  varchar2(100),
 		added_date  varchar2(100),
 		updated_by  varchar2(100),
-		updated_date  varchar2(100)
+		updated_date  varchar2(100),
+		status varchar2(10)
 	);
   
 4.考试记录表：exam_test_history
@@ -152,6 +156,7 @@ create table exam_results_details (
 		test_userId  varchar2(100),
 		test_userName  varchar2(100),
 		test_user_scores  varchar2(100),
+		status varchar2(10)
 	);
   
 -- Create/Recreate indexes 
@@ -186,7 +191,8 @@ create table 答题明细表：exam_test_history_detail (
 		added_date  varchar2(100),
 		updated_by  varchar2(100),
 		updated_date  varchar2(100),
-		sortID  varchar2(100)
+		sortID  varchar2(100),
+		status varchar2(10)
 	);
   
 
