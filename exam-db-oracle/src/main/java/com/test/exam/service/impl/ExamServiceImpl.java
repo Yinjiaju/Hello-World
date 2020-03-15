@@ -2,9 +2,17 @@ package com.test.exam.service.impl;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.alibaba.dubbo.config.annotation.Service;
+import com.test.exam.dao.ExamMenusDao;
+import com.test.exam.dao.ExamMenusDetailDao;
+import com.test.exam.dao.ExamResultsDetailsDao;
+import com.test.exam.dao.ExamTestHistoryDao;
+import com.test.exam.dao.ExamTestHistoryDetailDao;
+import com.test.exam.dao.ExamTitleDao;
+import com.test.exam.dao.ExamUserDao;
 import com.test.exam.domain.ExamMenus;
 import com.test.exam.domain.ExamMenusDetail;
 import com.test.exam.domain.ExamResultsDetails;
@@ -17,85 +25,100 @@ import com.test.exam.service.ExamService;
 @Service(version="examService")   //属于Dubbo的@Service注解，非Spring  作用：暴露服务
 @Component
 public class ExamServiceImpl implements ExamService{
-
+	
+	@Autowired
+	private ExamUserDao examUserDao;
+	
+	@Autowired
+	private ExamMenusDao examMenusDao;
+	
+	@Autowired
+	private ExamMenusDetailDao examMenusDetailDao;
+	
+	@Autowired
+	private ExamTitleDao examTitleDao;
+	
+	@Autowired
+	private ExamResultsDetailsDao examResultsDetailsDao;
+	
+	@Autowired
+	private ExamTestHistoryDao examTestHistoryDao;
+	
+	@Autowired
+	private ExamTestHistoryDetailDao examTestHistoryDetailDao;
+	
+	
 	@Override
 	public Integer insertExamUser(ExamUser examUser) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return examUserDao.insert(examUser);
 	}
 
 	@Override
 	public Integer insertExamUserList(List<ExamUser> examUsers)
 			throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return examUserDao.insertList(examUsers);
 	}
 
 	@Override
 	public Integer updateExamUser(ExamUser examUser) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return examUserDao.update(examUser);
 	}
 
 	@Override
 	public Integer updateExamUserList(List<ExamUser> examUsers)
 			throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return examUserDao.updateList(examUsers);
 	}
 
 	@Override
 	public Integer insertExamMenus(ExamMenus examMenu) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return examMenusDao.insert(examMenu);
 	}
 
 	@Override
 	public Integer insertExamMenusList(List<ExamMenus> examMenus)
 			throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return examMenusDao.insertList(examMenus);
 	}
 
 	@Override
 	public Integer updateExamMenus(ExamMenus examMenu) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return examMenusDao.update(examMenu);
 	}
 
 	@Override
 	public Integer updateExamMenusList(List<ExamMenus> examMenus)
 			throws Exception {
 		// TODO Auto-generated method stub
-		return null;
+		return examMenusDao.updateList(examMenus);
 	}
 
 	@Override
 	public Integer insertExamMenusDetail(ExamMenusDetail examMenuDetail)
 			throws Exception {
 		// TODO Auto-generated method stub
-		return null;
+		return examMenusDetailDao.insert(examMenuDetail);
 	}
 
 	@Override
 	public Integer insertExamMenusDetailList(
 			List<ExamMenusDetail> examMenuDetails) throws Exception {
 		// TODO Auto-generated method stub
-		return null;
+		return examMenusDetailDao.insertList(examMenuDetails);
 	}
 
 	@Override
 	public Integer updateExamMenusDetail(ExamMenusDetail examMenuDetail)
 			throws Exception {
 		// TODO Auto-generated method stub
-		return null;
+		return examMenusDetailDao.update(examMenuDetail);
 	}
 
 	@Override
 	public Integer updateExamMenusDetailList(
 			List<ExamMenusDetail> examMenuDetails) throws Exception {
 		// TODO Auto-generated method stub
-		return null;
+		return examMenusDetailDao.updateList(examMenuDetails);
 	}
 
 	@Override
@@ -206,6 +229,30 @@ public class ExamServiceImpl implements ExamService{
 	public Integer updateExamTestHistoryDetailList(
 			List<ExamTestHistoryDetail> examTestHistoryDetails)
 			throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Integer getExamUserIDSEQ() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Integer getExamMenusIDSEQ() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Integer getExamMenusDetailIDSEQ() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Integer getExamTitleIDSEQ() throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}

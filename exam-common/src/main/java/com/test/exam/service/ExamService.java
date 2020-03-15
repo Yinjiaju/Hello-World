@@ -23,6 +23,7 @@ public interface ExamService {
 	
 	public Integer updateExamUserList(List<ExamUser> examUsers) throws Exception;
 	
+	public Integer getExamUserIDSEQ() throws Exception;
 	
 	/**
 	 * 关于exam_menus的相关操作
@@ -36,6 +37,8 @@ public interface ExamService {
 	
 	public Integer updateExamMenusList(List<ExamMenus> examMenus) throws Exception;
 	
+	public Integer getExamMenusIDSEQ() throws Exception;
+	
 	/**
 	 * 关于exam_menus_detail的相关操作
 	 * 
@@ -48,6 +51,7 @@ public interface ExamService {
 	
 	public Integer updateExamMenusDetailList(List<ExamMenusDetail> examMenuDetails) throws Exception;
 	
+	public Integer getExamMenusDetailIDSEQ() throws Exception;
 	
 	/**
 	 * 关于exam_title的相关操作
@@ -61,6 +65,7 @@ public interface ExamService {
 	
 	public Integer updateExamTitleList(List<ExamTitle> examTitles) throws Exception;
 	
+	public Integer getExamTitleIDSEQ() throws Exception;
 	
 	/**
 	 * 关于exam_results_details的相关操作
