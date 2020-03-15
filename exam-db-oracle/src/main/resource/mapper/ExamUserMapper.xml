@@ -91,7 +91,7 @@
 	</select>
 	
 	<select id="getList" resultMap="examUserMap" parameterType="java.util.Map">
-		select * from exam_user where nvl(status,'A')='A'
+		select * from exam_user where 1=1
 		 <if test="status!=null">
 		 	and status=#{status,jdbcType=VARCHAR}
 		 </if>

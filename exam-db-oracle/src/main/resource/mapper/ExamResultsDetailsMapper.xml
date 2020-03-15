@@ -30,7 +30,7 @@
 			status,
 			result_id
 		)values(
-			#{resultName,jdbcType=INTEGER},
+			#{resultName,jdbcType=VARCHAR},
 			#{resultIsTrue,jdbcType=VARCHAR},
 			#{titleId,jdbcType=INTEGER},
 			#{addedBy,jdbcType=VARCHAR},
@@ -60,7 +60,7 @@
 			<foreach collection="list" item="item" index="index" separator=",">
 				(
 					#{resultId,jdbcType=VARCHAR},
-					#{item.resultName,jdbcType=INTEGER},
+					#{item.resultName,jdbcType=VARCHAR},
 					#{item.resultIsTrue,jdbcType=VARCHAR},
 					#{item.titleId,jdbcType=INTEGER},
 					#{item.addedBy,jdbcType=VARCHAR},
@@ -81,13 +81,13 @@
 	        <if test="updatedDate!=null">updated_date=#{updatedDate,jdbcType=VARCHAR}</if>
 	        <if test="status!=null">status=#{status,jdbcType=VARCHAR}</if>
 	    </set>
-	    where  result_id=#{resultId,jdbcType=String}
+	    where  result_id=#{resultId,jdbcType=VARCHAR}
 	</update>
 	
 
 	<select id="get" resultMap="examResultsDetailsMap" parameterType="com.test.exam.domain.ExamResultsDetails">
 		select * from exam_results_details where nvl(status,'A')='A'
-		and result_id=#{resultId,jdbcType=String}
+		and result_id=#{resultId,jdbcType=VARCHAR}
 	</select>
 	
 	<select id="getList" resultMap="examResultsDetailsMap" parameterType="java.util.Map">

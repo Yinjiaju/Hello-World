@@ -16,7 +16,7 @@ public class ExamTestHistoryDetail implements Serializable{
 	private String testTitleId;
 	private String testTitleUserResult;
 	private String testTitleCheckResult;
-	private BigDecimal testUserScore;
+	private String testUserScore;
 	private String addedBy;
 	private String addedDate;
 	private String updatedBy;
@@ -65,10 +65,10 @@ public class ExamTestHistoryDetail implements Serializable{
 	public void setTestTitleCheckResult(String testTitleCheckResult) {
 		this.testTitleCheckResult = testTitleCheckResult;
 	}
-	public BigDecimal getTestUserScore() {
+	public String getTestUserScore() {
 		return testUserScore;
 	}
-	public void setTestUserScore(BigDecimal testUserScore) {
+	public void setTestUserScore(String testUserScore) {
 		this.testUserScore = testUserScore;
 	}
 	public String getAddedBy() {
@@ -110,7 +110,7 @@ public class ExamTestHistoryDetail implements Serializable{
 	public ExamTestHistoryDetail(String testDetailId, String testId,
 			String testName, Integer testUserId, String testTitleId,
 			String testTitleUserResult, String testTitleCheckResult,
-			BigDecimal testUserScore, String addedBy, String addedDate,
+			String testUserScore, String addedBy, String addedDate,
 			String updatedBy, String updatedDate, String sortId, String status) {
 		super();
 		this.testDetailId = testDetailId;

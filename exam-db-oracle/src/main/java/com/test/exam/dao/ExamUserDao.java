@@ -17,4 +17,6 @@ public interface ExamUserDao {
 	public ExamUser get(ExamUser examUser) throws Exception;
 	
 	public List<ExamUser> getList(ExamUser examUser) throws Exception;
+	
+	public Integer getExamUserSEQ() throws Exception;
 }

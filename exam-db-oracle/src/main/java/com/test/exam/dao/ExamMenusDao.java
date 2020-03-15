@@ -17,4 +17,7 @@ public interface ExamMenusDao {
 	public ExamMenus get(ExamMenus examMenu) throws Exception;
 	
 	public List<ExamMenus> getList(ExamMenus examMenu) throws Exception;
+	
+	public Integer getExamMenusSEQ() throws Exception;
+	
 }
