@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.test.exam.dao.ExamResultsDetailsDao">
+	
+	<resultMap id="examResultsDetailsMap" type="com.test.exam.domain.ExamResultsDetails">
+		<result property="resultName" column="result_name" />
+		<result property="resultIsTrue" column="result_isTrue" />
+		<result property="titleId" column="title_id" />
+		<result property="addedBy" column="added_by" />
+		<result property="addedDate" column="added_date" />
+		<result property="updatedBy" column="updated_by" />
+		<result property="updatedDate" column="updated_date" />
+		<result property="status" column="status" />
+		<result property="resultId" column="result_id" />
+		
+	</resultMap>
+	
+	<insert id="insert"  parameterType="com.test.exam.domain.ExamResultsDetails">
+	<selectKey keyProperty="resultId" resultType="java.lang.String" order="BEFORE">
+		select REPLACE(UUID(),'-','') as resultId from dual
+	</selectKey>	
+		insert into exam_results_details (
+			result_name,
+			result_isTrue,
+			title_id,
+			added_by,
+			added_date,
+			updated_by,
+			updated_date,
+			status,
+			result_id
+		)values(
+			#{resultName,jdbcType=INTEGER},
+			#{resultIsTrue,jdbcType=VARCHAR},
+			#{titleId,jdbcType=INTEGER},
+			#{addedBy,jdbcType=VARCHAR},
+			#{addedDate,jdbcType=VARCHAR},
+			#{updatedBy,jdbcType=VARCHAR},
+			#{updatedDate,jdbcType=VARCHAR},
+			#{status,jdbcType=VARCHAR}
+			#{resultId,jdbcType=VARCHAR}
+		)
+	</insert>
+	
+	<insert id="insertList" parameterType="java.util.List">
+	<selectKey keyProperty="resultId" resultType="java.lang.String" order="BEFORE">
+		select REPLACE(UUID(),'-','') as resultId from dual
+	</selectKey>	
+		insert into exam_results_details (
+			result_id,
+			result_name,
+			result_isTrue,
+			title_id,
+			added_by,
+			added_date,
+			updated_by,
+			updated_date,
+			status
+		) values
+			<foreach collection="list" item="item" index="index" separator=",">
+				(
+					#{resultId,jdbcType=VARCHAR},
+					#{item.resultName,jdbcType=INTEGER},
+					#{item.resultIsTrue,jdbcType=VARCHAR},
+					#{item.titleId,jdbcType=INTEGER},
+					#{item.addedBy,jdbcType=VARCHAR},
+					#{item.addedDate,jdbcType=VARCHAR},
+					#{item.updatedBy,jdbcType=VARCHAR},
+					#{item.updatedDate,jdbcType=VARCHAR},
+					#{item.status,jdbcType=VARCHAR}
+				)
+		     </foreach>		
+	</insert>
+	
+	<update id="update" parameterType="com.test.exam.domain.ExamResultsDetails">
+		update exam_results_details 
+	    <set>
+	        <if test="resultName!=null">result_name=#{resultName,jdbcType=VARCHAR},</if>
+	        <if test="resultIsTrue!=null">result_isTrue=#{resultIsTrue,jdbcType=VARCHAR},</if>
+	        <if test="updatedBy!=null">updated_by=#{updatedBy,jdbcType=VARCHAR},</if>
+	        <if test="updatedDate!=null">updated_date=#{updatedDate,jdbcType=VARCHAR}</if>
+	        <if test="status!=null">status=#{status,jdbcType=VARCHAR}</if>
+	    </set>
+	    where  result_id=#{resultId,jdbcType=String}
+	</update>
+	
+
+	<select id="get" resultMap="examResultsDetailsMap" parameterType="com.test.exam.domain.ExamResultsDetails">
+		select * from exam_results_details where nvl(status,'A')='A'
+		and result_id=#{resultId,jdbcType=String}
+	</select>
+	
+	<select id="getList" resultMap="examResultsDetailsMap" parameterType="java.util.Map">
+		select * from exam_results_details where nvl(status,'A')='A' 
+		 <if test="titleId!=null">
+		 	and title_id=#{titleId,jdbcType=INTEGER}
+		 </if>
+	</select>
+	
+</mapper>

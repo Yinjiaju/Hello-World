@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.test.exam.dao.ExamTestHistoryDetailDao">
+	
+	<resultMap id="examTestHistoryDetailMap" type="com.test.exam.domain.ExamTestHistoryDetail">
+		<result property="testDetailId" column="test_detail_id" />
+		<result property="testId" column="test_id" />
+		<result property="testName" column="test_name" />
+		<result property="addedBy" column="added_by" />
+		<result property="addedDate" column="added_date" />
+		<result property="updatedBy" column="updated_by" />
+		<result property="updatedDate" column="updated_date" />
+		<result property="status" column="status" />
+		<result property="testUserId" column="test_userId" />
+		<result property="testUserName" column="test_userName" />
+		<result property="testTitleId" column="test_title_id" />
+		<result property="testTitleUserResult" column="test_title_userResult" />
+		<result property="testTitleCheckResult" column="test_title_checkResult" />
+		<result property="testUserScore" column="test_user_score" />
+		<result property="sortId" column="sortID" />
+	</resultMap>
+	
+	<insert id="insert"  parameterType="com.test.exam.domain.ExamTestHistoryDetail" >
+		<selectKey keyProperty="testDetailId" order="BEFORE" resultType="java.lang.String">
+			select REPLACE(UUID(),'-','') as testId from dual
+		</selectKey>
+		insert into exam_test_history_detail (
+			test_detail_id,
+			test_id,
+			test_name,
+			added_by,
+			added_date,
+			updated_by,
+			updated_date,
+			status,
+			test_userId,
+			test_userName,
+			test_title_id,
+			test_title_userResult,
+			test_title_checkResult,
+			test_userScore,
+			sortID
+		)values(
+			#{testDetailId,jdbcType=VARCHAR},
+			#{testId,jdbcType=VARCHAR},
+			#{testName,jdbcType=VARCHAR},
+			#{addedBy,jdbcType=VARCHAR},
+			#{addedDate,jdbcType=VARCHAR},
+			#{updatedBy,jdbcType=VARCHAR},
+			#{updatedDate,jdbcType=VARCHAR},
+			#{status,jdbcType=VARCHAR},
+			#{testUserId,jdbcType=INTEGER},
+			#{testUserName,jdbcType=VARCHAR},
+			#{testTitleId,jdbcType=VARCHAR},
+			#{testTitleUserResult,jdbcType=VARCHAR},
+			#{testTitleCheckResult,jdbcType=VARCHAR},
+			#{testUserScore,jdbcType=VARCHAR},
+			#{sortId,jdbcType=VARCHAR}
+		)
+	</insert>
+	
+	<insert id="insertList" parameterType="java.util.List">
+		<selectKey keyProperty="testDetailId" order="BEFORE" resultType="java.lang.String">
+			select REPLACE(UUID(),'-','') as testId from dual
+		</selectKey>
+		insert into exam_test_history_detail (
+			test_detail_id,
+			test_id,
+			test_name,
+			added_by,
+			added_date,
+			updated_by,
+			updated_date,
+			status,
+			test_userId,
+			test_userName,
+			test_title_id,
+			test_title_userResult,
+			test_title_checkResult,
+			test_userScore,
+			sortID
+		) values
+			<foreach collection="list" item="item" index="index" separator=",">
+				(
+					#{testDetailId,jdbcType=VARCHAR},
+					#{item.testId,jdbcType=VARCHAR},
+					#{item.testName,jdbcType=VARCHAR},
+					#{item.addedBy,jdbcType=VARCHAR},
+					#{item.addedDate,jdbcType=VARCHAR},
+					#{item.updatedBy,jdbcType=VARCHAR},
+					#{item.updatedDate,jdbcType=VARCHAR},
+					#{item.status,jdbcType=VARCHAR},
+					#{item.testUserId,jdbcType=INTEGER},
+					#{item.testUserName,jdbcType=VARCHAR},
+					#{item.testTitleId,jdbcType=VARCHAR},
+					#{item.testTitleUserResult,jdbcType=VARCHAR},
+					#{item.testTitleCheckResult,jdbcType=VARCHAR},
+					#{item.testUserScore,jdbcType=VARCHAR},
+					#{item.sortId,jdbcType=VARCHAR}
+				)
+		     </foreach>		
+	</insert>
+	
+	<update id="update" parameterType="com.test.exam.domain.ExamTestHistoryDetail">
+		update exam_test_history_detail 
+	    <set>
+	        <if test="updatedBy!=null">updated_by=#{updatedBy,jdbcType=VARCHAR},</if>
+	        <if test="updatedDate!=null">updated_date=#{updatedDate,jdbcType=VARCHAR}</if>
+	        <if test="status!=null">status=#{status,jdbcType=VARCHAR}</if>
+	    </set>
+	    where  test_detail_id=#{testDetailId,jdbcType=VARCHAR}
+	</update>
+	
+	<select id="get" resultMap="examTestHistoryDetailMap" parameterType="com.test.exam.domain.ExamTestHistoryDetail">
+		select * from exam_test_history_detail where nvl(status,'A')='A'
+		and test_detail_id=#{testDetailId,jdbcType=VARCHAR}
+	</select>
+	
+	<select id="getList" resultMap="examTestHistoryDetailMap" parameterType="java.util.Map">
+		select * from exam_test_history_detail where nvl(status,'A')='A' 
+		 <if test="testUserId!=null">
+		 	and test_userId=#{testUserId,jdbcType=INTEGER}
+		 </if>
+	</select>
+	
+</mapper>

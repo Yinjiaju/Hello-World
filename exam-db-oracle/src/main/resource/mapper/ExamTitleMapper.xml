@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.test.exam.dao.ExamTitleDao">
+	<resultMap id="examTitleMap" type="com.test.exam.domain.ExamTitle">
+		<result property="titleId" column="title_id" />
+		<result property="titleName" column="title_name" />
+		<result property="titleType" column="title_type" />
+		<result property="titleTypeName" column="title_type_name" />
+		<result property="addedBy" column="added_by" />
+		<result property="addedDate" column="added_date" />
+		<result property="updatedBy" column="updated_by" />
+		<result property="updatedDate" column="updated_date" />
+		<result property="titleLevel" column="title_level" />
+		<result property="titleChapter" column="tilte_chapter" />
+		<result property="titleKnowledge" column="tilte_knowledge" />
+		<result property="status" column="status" />
+	</resultMap>
+	
+	<select id="getExamTitleSEQ" resultMap="java.util.Integer" >
+		select * from EXAM_TITLE_ID_SEQ 
+	</select>
+	
+	<insert id="insert"  parameterType="com.test.exam.domain.ExamTitle" >
+		insert into exam_title (
+			title_id,
+			title_name,
+			title_type,
+			title_type_name,
+			added_by,
+			added_date,
+			updated_by,
+			updated_date,
+			title_level,
+			tilte_chapter,
+			tilte_knowledge,
+			status
+		)values(
+			#{titleId,jdbcType=INTEGER},
+			#{titleName,jdbcType=VARCHAR},
+			#{titleType,jdbcType=INTEGER},
+			#{titleTypeName,jdbcType=VARCHAR},
+			#{addedBy,jdbcType=VARCHAR},
+			#{addedDate,jdbcType=VARCHAR},
+			#{updatedBy,jdbcType=VARCHAR},
+			#{updatedDate,jdbcType=VARCHAR},
+			#{titleLevel,jdbcType=VARCHAR},
+			#{titleChapter,jdbcType=VARCHAR},
+			#{titleKnowledge,jdbcType=VARCHAR},
+			#{status,jdbcType=VARCHAR}
+		)
+	</insert>
+	
+	<insert id="insertList" parameterType="java.util.List">
+		insert into exam_title (
+			title_id,
+			title_name,
+			title_type,
+			title_type_name,
+			added_by,
+			added_date,
+			updated_by,
+			updated_date,
+			title_level,
+			tilte_chapter,
+			tilte_knowledge,
+			status
+		) values
+			<foreach collection="list" item="item" index="index" separator=",">
+				(
+					#{item.titleId,jdbcType=INTEGER},
+					#{item.titleName,jdbcType=VARCHAR},
+					#{item.titleType,jdbcType=INTEGER},
+					#{item.titleTypeName,jdbcType=VARCHAR},
+					#{item.addedBy,jdbcType=VARCHAR},
+					#{item.addedDate,jdbcType=VARCHAR},
+					#{item.updatedBy,jdbcType=VARCHAR},
+					#{item.updatedDate,jdbcType=VARCHAR},
+					#{item.titleLevel,jdbcType=VARCHAR},
+					#{item.titleChapter,jdbcType=VARCHAR},
+					#{item.titleKnowledge,jdbcType=VARCHAR},
+					#{item.status,jdbcType=VARCHAR}
+				)
+		     </foreach>		
+	</insert>
+	
+	<update id="update" parameterType="com.test.exam.domain.ExamTitle">
+		update exam_title 
+	    <set>
+	        <if test="updatedBy!=null">updated_by=#{updatedBy,jdbcType=VARCHAR},</if>
+	        <if test="updatedDate!=null">updated_date=#{updatedDate,jdbcType=VARCHAR}</if>
+	        <if test="status!=null">status=#{status,jdbcType=VARCHAR}</if>
+	    </set>
+	    where  title_id=#{titleId,jdbcType=INTEGER}
+	</update>
+	
+	<select id="get" resultMap="examTitleMap" parameterType="com.test.exam.domain.ExamTitle">
+		select * from exam_title where nvl(status,'A')='A'
+		and title_id=#{titleId,jdbcType=INTEGER}
+	</select>
+	
+	<select id="getList" resultMap="examTitleMap" parameterType="java.util.Map">
+		select * from exam_title where nvl(status,'A')='A'
+		 <if test="titleType!=null">
+		 	and title_type=#{titleType,jdbcType=INTEGER}
+		 </if>
+	</select>
+	
+</mapper>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.test.exam.dao.ExamMenusDetailDao">
+
+	<resultMap id="examMenusDetailMap" type="com.test.exam.domain.ExamMenusDetail">
+		<result property="menuDetailId" column="menu_detail_id" />
+		<result property="menuId" column="menu_id" />
+		<result property="menuDetailName" column="menu_detail_name" />
+		<result property="addedBy" column="added_by" />
+		<result property="addedDate" column="added_date" />
+		<result property="updatedBy" column="updated_by" />
+		<result property="updatedDate" column="updated_date" />
+		<result property="status" column="status" />
+	</resultMap>
+	
+	<select id="getExamDetailIDSEQ" resultMap="java.util.Integer" >
+		select * from EXAM_MENU_DETAIL_ID_SEQ 
+	</select>
+	
+	<insert id="insert"  parameterType="com.test.exam.domain.ExamMenusDetail" >
+		insert into exam_menus_detail (
+			menu_detail_id,
+			menu_id,
+			menu_name,
+			added_by,
+			added_date,
+			updated_by,
+			updated_date,
+			status
+		)values(
+			#{menuDetailId,jdbcType=INTEGER},
+			#{menuId,jdbcType=INTEGER},
+			#{menuName,jdbcType=VARCHAR},
+			#{addedBy,jdbcType=VARCHAR},
+			#{addedDate,jdbcType=VARCHAR},
+			#{updatedBy,jdbcType=VARCHAR},
+			#{updatedDate,jdbcType=VARCHAR},
+			#{status,jdbcType=VARCHAR}
+		)
+	</insert>
+	
+	<insert id="insertList" parameterType="java.util.List">
+		insert into exam_menus_detail (
+			menu_detail_id,
+			menu_id,
+			menu_name,
+			added_by,
+			added_date,
+			updated_by,
+			updated_date,
+			status
+		) values
+			<foreach collection="list" item="item" index="index" separator=",">
+				(
+					#{item.menuDetailId,jdbcType=INTEGER},
+					#{item.menuId,jdbcType=INTEGER},
+					#{item.menuName,jdbcType=VARCHAR},
+					#{item.addedBy,jdbcType=VARCHAR},
+					#{item.addedDate,jdbcType=VARCHAR},
+					#{item.updatedBy,jdbcType=VARCHAR},
+					#{item.updatedDate,jdbcType=VARCHAR},
+					#{item.status,jdbcType=VARCHAR}
+				)
+		     </foreach>		
+	</insert>
+	
+	<update id="update" parameterType="com.test.exam.domain.ExamMenusDetail">
+		update exam_menus_detail 
+	    <set>
+	        <if test="menuName!=null">menu_name=#{menuName,jdbcType=VARCHAR},</if>
+	        <if test="updatedBy!=null">updated_by=#{updatedBy,jdbcType=VARCHAR},</if>
+	        <if test="updatedDate!=null">updated_date=#{updatedDate,jdbcType=VARCHAR}</if>
+	        <if test="status!=null">status=#{status,jdbcType=VARCHAR}</if>
+	    </set>
+	    where  menu_detail_id=#{menuDetailId,jdbcType=INTEGER}
+	</update>
+	
+	<select id="get" resultMap="examMenusDetailMap" parameterType="com.test.exam.domain.ExamMenusDetail">
+		select * from exam_menus_detail where nvl(status,'A')='A'
+		and menu_detail_id=#{menuDetailId,jdbcType=INTEGER}
+	</select>
+	
+	<select id="getList" resultMap="examMenusDetailMap" parameterType="java.util.Map">
+		select * from exam_menus_detail where nvl(status,'A')='A'
+	</select>
+	
+</mapper>
