@@ -47,21 +47,27 @@ public class ExamMenusDetail implements Serializable {
 	public void setAddedDate(String addedDate) {
 		this.addedDate = addedDate;
 	}
-	public String getupdatedBy() {
+	public String getUpdatedBy() {
 		return updatedBy;
 	}
-	public void setupdatedBy(String updatedBy) {
+	public void setUpdatedBy(String updatedBy) {
 		this.updatedBy = updatedBy;
 	}
-	public String getupdatedDate() {
+	public String getUpdatedDate() {
 		return updatedDate;
 	}
-	public void setupdatedDate(String updatedDate) {
+	public void setUpdatedDate(String updatedDate) {
 		this.updatedDate = updatedDate;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
 	}
 	public ExamMenusDetail(Integer menuDetailId, Integer menuId,
 			String menuDetailName, String addedBy, String addedDate,
-			String updatedBy, String updatedDate) {
+			String updatedBy, String updatedDate, String status) {
 		super();
 		this.menuDetailId = menuDetailId;
 		this.menuId = menuId;
@@ -70,12 +76,8 @@ public class ExamMenusDetail implements Serializable {
 		this.addedDate = addedDate;
 		this.updatedBy = updatedBy;
 		this.updatedDate = updatedDate;
+		this.status = status;
 	}
-    public String getStatus() {
-        return status;
-    }
-    public void setStatus(String status) {
-        this.status = status;
-    }
+	
 	
 }

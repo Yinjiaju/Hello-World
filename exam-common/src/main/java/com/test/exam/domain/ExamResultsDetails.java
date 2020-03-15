@@ -16,6 +16,7 @@ public class ExamResultsDetails implements Serializable{
 	private String updatedBy;
 	private String updatedDate;
 	private String status;
+	private String resultId;
 	public String getResultName() {
 		return resultName;
 	}
@@ -46,21 +47,33 @@ public class ExamResultsDetails implements Serializable{
 	public void setAddedDate(String addedDate) {
 		this.addedDate = addedDate;
 	}
-	public String getupdatedBy() {
+	public String getUpdatedBy() {
 		return updatedBy;
 	}
-	public void setupdatedBy(String updatedBy) {
+	public void setUpdatedBy(String updatedBy) {
 		this.updatedBy = updatedBy;
 	}
-	public String getupdatedDate() {
+	public String getUpdatedDate() {
 		return updatedDate;
 	}
-	public void setupdatedDate(String updatedDate) {
+	public void setUpdatedDate(String updatedDate) {
 		this.updatedDate = updatedDate;
 	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public String getResultId() {
+		return resultId;
+	}
+	public void setResultId(String resultId) {
+		this.resultId = resultId;
+	}
 	public ExamResultsDetails(String resultName, Boolean resultIsTrue,
-			Integer titleId, String addedBy, String addedDate, String updatedBy,
-			String updatedDate) {
+			Integer titleId, String addedBy, String addedDate,
+			String updatedBy, String updatedDate, String status, String resultId) {
 		super();
 		this.resultName = resultName;
 		this.resultIsTrue = resultIsTrue;
@@ -69,13 +82,9 @@ public class ExamResultsDetails implements Serializable{
 		this.addedDate = addedDate;
 		this.updatedBy = updatedBy;
 		this.updatedDate = updatedDate;
+		this.status = status;
+		this.resultId = resultId;
 	}
-    public String getStatus() {
-        return status;
-    }
-    public void setStatus(String status) {
-        this.status = status;
-    }
 	
 	
 }

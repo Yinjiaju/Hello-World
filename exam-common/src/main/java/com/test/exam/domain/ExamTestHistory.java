@@ -17,7 +17,7 @@ public class ExamTestHistory implements Serializable{
 	private String updatedDate;
 	private Integer testUserId;
 	private String testUserName;
-	private BigDecimal testUserScores;
+	private String testUserScores;
 	private String status;
 	public String getTestId() {
 		return testId;
@@ -43,16 +43,16 @@ public class ExamTestHistory implements Serializable{
 	public void setAddedDate(String addedDate) {
 		this.addedDate = addedDate;
 	}
-	public String getupdatedBy() {
+	public String getUpdatedBy() {
 		return updatedBy;
 	}
-	public void setupdatedBy(String updatedBy) {
+	public void setUpdatedBy(String updatedBy) {
 		this.updatedBy = updatedBy;
 	}
-	public String getupdatedDate() {
+	public String getUpdatedDate() {
 		return updatedDate;
 	}
-	public void setupdatedDate(String updatedDate) {
+	public void setUpdatedDate(String updatedDate) {
 		this.updatedDate = updatedDate;
 	}
 	public Integer getTestUserId() {
@@ -67,15 +67,22 @@ public class ExamTestHistory implements Serializable{
 	public void setTestUserName(String testUserName) {
 		this.testUserName = testUserName;
 	}
-	public BigDecimal getTestUserScores() {
+	public String getTestUserScores() {
 		return testUserScores;
 	}
-	public void setTestUserScores(BigDecimal testUserScores) {
+	public void setTestUserScores(String testUserScores) {
 		this.testUserScores = testUserScores;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
 	}
 	public ExamTestHistory(String testId, String testName, String addedBy,
 			String addedDate, String updatedBy, String updatedDate,
-			Integer testUserId, String testUserName, BigDecimal testUserScores) {
+			Integer testUserId, String testUserName, String testUserScores,
+			String status) {
 		super();
 		this.testId = testId;
 		this.testName = testName;
@@ -86,25 +93,7 @@ public class ExamTestHistory implements Serializable{
 		this.testUserId = testUserId;
 		this.testUserName = testUserName;
 		this.testUserScores = testUserScores;
+		this.status = status;
 	}
-    public String getUpdatedBy() {
-        return updatedBy;
-    }
-    public void setUpdatedBy(String updatedBy) {
-        this.updatedBy = updatedBy;
-    }
-    public String getUpdatedDate() {
-        return updatedDate;
-    }
-    public void setUpdatedDate(String updatedDate) {
-        this.updatedDate = updatedDate;
-    }
-    public String getStatus() {
-        return status;
-    }
-    public void setStatus(String status) {
-        this.status = status;
-    }
-	
 	
 }

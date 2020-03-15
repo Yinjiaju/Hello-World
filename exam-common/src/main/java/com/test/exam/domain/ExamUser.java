@@ -8,21 +8,6 @@ public class ExamUser implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	public ExamUser(Integer userId, String userName, String password,
-			String status, String roleType, String addedBy, String addedDate,
-			String updatedBy, String updatedDate, String userMenus) {
-		super();
-		this.userId = userId;
-		this.userName = userName;
-		this.password = password;
-		this.status = status;
-		this.roleType = roleType;
-		this.addedBy = addedBy;
-		this.addedDate = addedDate;
-		this.updatedBy = updatedBy;
-		this.updatedDate = updatedDate;
-		this.userMenus = userMenus;
-	}
 	private Integer userId;
 	private String userName;
 	private String password;
@@ -93,6 +78,20 @@ public class ExamUser implements Serializable{
 	public void setUserMenus(String userMenus) {
 		this.userMenus = userMenus;
 	}
-	
+	public ExamUser(Integer userId, String userName, String password,
+			String status, String roleType, String addedBy, String addedDate,
+			String updatedBy, String updatedDate, String userMenus) {
+		super();
+		this.userId = userId;
+		this.userName = userName;
+		this.password = password;
+		this.status = status;
+		this.roleType = roleType;
+		this.addedBy = addedBy;
+		this.addedDate = addedDate;
+		this.updatedBy = updatedBy;
+		this.updatedDate = updatedDate;
+		this.userMenus = userMenus;
+	}
 	
 }

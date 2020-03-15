@@ -56,16 +56,16 @@ public class ExamTitle implements Serializable {
 	public void setAddedDate(String addedDate) {
 		this.addedDate = addedDate;
 	}
-	public String getupdatedBy() {
+	public String getUpdatedBy() {
 		return updatedBy;
 	}
-	public void setupdatedBy(String updatedBy) {
+	public void setUpdatedBy(String updatedBy) {
 		this.updatedBy = updatedBy;
 	}
-	public String getupdatedDate() {
+	public String getUpdatedDate() {
 		return updatedDate;
 	}
-	public void setupdatedDate(String updatedDate) {
+	public void setUpdatedDate(String updatedDate) {
 		this.updatedDate = updatedDate;
 	}
 	public String getTitleLevel() {
@@ -86,10 +86,23 @@ public class ExamTitle implements Serializable {
 	public void setTitleKnowledge(String titleKnowledge) {
 		this.titleKnowledge = titleKnowledge;
 	}
+	public Integer getUuId() {
+		return uuId;
+	}
+	public void setUuId(Integer uuId) {
+		this.uuId = uuId;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
 	public ExamTitle(Integer titleId, String titleName, Integer titleType,
 			String titleTypeName, String addedBy, String addedDate,
 			String updatedBy, String updatedDate, String titleLevel,
-			String titleChapter, String titleKnowledge) {
+			String titleChapter, String titleKnowledge, Integer uuId,
+			String status) {
 		super();
 		this.titleId = titleId;
 		this.titleName = titleName;
@@ -102,30 +115,8 @@ public class ExamTitle implements Serializable {
 		this.titleLevel = titleLevel;
 		this.titleChapter = titleChapter;
 		this.titleKnowledge = titleKnowledge;
-	}
-	public String getUpdatedBy() {
-		return updatedBy;
-	}
-	public void setUpdatedBy(String updatedBy) {
-		this.updatedBy = updatedBy;
-	}
-	public String getUpdatedDate() {
-		return updatedDate;
-	}
-	public void setUpdatedDate(String updatedDate) {
-		this.updatedDate = updatedDate;
-	}
-	public Integer getUuId() {
-		return uuId;
-	}
-	public void setUuId(Integer uuId) {
 		this.uuId = uuId;
+		this.status = status;
 	}
-    public String getStatus() {
-        return status;
-    }
-    public void setStatus(String status) {
-        this.status = status;
-    }
 	
 }

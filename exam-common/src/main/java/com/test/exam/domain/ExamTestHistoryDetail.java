@@ -5,7 +5,11 @@ import java.math.BigDecimal;
 
 public class ExamTestHistoryDetail implements Serializable{
 	
-	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private String testDetailId;
 	private String testId;
 	private String testName;
 	private Integer testUserId;
@@ -19,6 +23,12 @@ public class ExamTestHistoryDetail implements Serializable{
 	private String updatedDate;
 	private String sortId;
 	private String status;
+	public String getTestDetailId() {
+		return testDetailId;
+	}
+	public void setTestDetailId(String testDetailId) {
+		this.testDetailId = testDetailId;
+	}
 	public String getTestId() {
 		return testId;
 	}
@@ -91,12 +101,19 @@ public class ExamTestHistoryDetail implements Serializable{
 	public void setSortId(String sortId) {
 		this.sortId = sortId;
 	}
-	public ExamTestHistoryDetail(String testId, String testName,
-			Integer testUserId, String testTitleId, String testTitleUserResult,
-			String testTitleCheckResult, BigDecimal testUserScore,
-			String addedBy, String addedDate, String updatedBy,
-			String updatedDate, String sortId) {
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public ExamTestHistoryDetail(String testDetailId, String testId,
+			String testName, Integer testUserId, String testTitleId,
+			String testTitleUserResult, String testTitleCheckResult,
+			BigDecimal testUserScore, String addedBy, String addedDate,
+			String updatedBy, String updatedDate, String sortId, String status) {
 		super();
+		this.testDetailId = testDetailId;
 		this.testId = testId;
 		this.testName = testName;
 		this.testUserId = testUserId;
@@ -109,12 +126,7 @@ public class ExamTestHistoryDetail implements Serializable{
 		this.updatedBy = updatedBy;
 		this.updatedDate = updatedDate;
 		this.sortId = sortId;
+		this.status = status;
 	}
-    public String getStatus() {
-        return status;
-    }
-    public void setStatus(String status) {
-        this.status = status;
-    }
 	
 }
