@@ -2,83 +2,81 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.test.exam.dao.ExamMenusDao">
 
-private Integer menuId;
-	private String menuName;
-	private String addedBy;
-	private String addedDate;
-	private String updatedBy;
-	private String updatedDate;
-
 	<resultMap id="examMenusMap" type="com.test.exam.domain.ExamMenus">
-		<result property="menuId" column="user_id" />
-		<result property="menuName" column="user_name" />
-		<result property="status" column="status" />
-		<result property="addedBy" column="added_by" />s
+		<result property="menuId" column="menu_id" />
+		<result property="menuName" column="menu_name" />
+		<result property="addedBy" column="added_by" />
 		<result property="addedDate" column="added_date" />
 		<result property="updatedBy" column="updated_by" />
 		<result property="updatedDate" column="updated_date" />
-		<result property="name" column="name" />
-		<result property="password" column="password" />
+		<result property="status" column="status" />
 	</resultMap>
 	
-	<select id="getAllUsers" resultMap="userMap" >
-		select * from mercury_user where nvl(status,0)=0
-	
+	<select id="getExamMenusSEQ" resultMap="java.util.Integer" >
+		select * from EXAM_MENU_ID_SEQ 
 	</select>
 	
-	<insert id="insert"  parameterType="com.test.exam.domain.MercuryUser" >
-		<selectKey resultType="int" keyProperty="userId" order="BEFORE" keyColumn="user_id">
-			select nvl(max(user_id),0)+1 as user_id from mercury_user
-		</selectKey>
-		insert into mercury_user (
-			user_id,
-			user_name,
-			status,
-			is_admin,
+	<insert id="insert"  parameterType="com.test.exam.domain.ExamMenus" >
+		insert into exam_menus (
+			menu_id,
+			menu_name,
 			added_by,
 			added_date,
 			updated_by,
 			updated_date,
-			name,
-			password
+			status
 		)values(
-			#{userId,jdbcType=INTEGER},
-			#{userName,jdbcType=VARCHAR},
-			#{status,jdbcType=VARCHAR},
-			#{isAdmin,jdbcType=VARCHAR},
+			#{menuId,jdbcType=INTEGER},
+			#{menuName,jdbcType=VARCHAR},
 			#{addedBy,jdbcType=VARCHAR},
 			#{addedDate,jdbcType=VARCHAR},
 			#{updatedBy,jdbcType=VARCHAR},
 			#{updatedDate,jdbcType=VARCHAR},
-			#{name,jdbcType=VARCHAR},
-			#{password}
+			#{status,jdbcType=VARCHAR}
 		)
 	</insert>
 	
-	<insert id="insertUserBak"  parameterType="com.test.exam.domain.MercuryUser" >
-		insert into mercury_user_bak (
-			user_id,
-			user_name,
-			status,
-			is_admin,
+	<insert id="insertList" parameterType="java.util.List">
+		insert into exam_menus (
+			menu_id,
+			menu_name,
 			added_by,
 			added_date,
 			updated_by,
 			updated_date,
-			name,
-			password
-		)values(
-			#{userId,jdbcType=INTEGER},
-			#{userName,jdbcType=VARCHAR},
-			#{status},
-			#{isAdmin},
-			#{addedBy},
-			#{addedDate},
-			#{updatedBy},
-			#{updatedDate},
-			#{name},
-			#{password}
-		)
+			status
+		) values
+			<foreach collection="list" item="item" index="index" separator=",">
+				(
+					#{item.menuId,jdbcType=INTEGER},
+					#{item.menuName,jdbcType=VARCHAR},
+					#{item.addedBy,jdbcType=VARCHAR},
+					#{item.addedDate,jdbcType=VARCHAR},
+					#{item.updatedBy,jdbcType=VARCHAR},
+					#{item.updatedDate,jdbcType=VARCHAR},
+					#{item.status,jdbcType=VARCHAR}
+				)
+		     </foreach>		
 	</insert>
+	
+	<update id="update" parameterType="com.test.exam.domain.ExamMenus">
+		update exam_menus 
+	    <set>
+	        <if test="menuName!=null">menu_name=#{menuName,jdbcType=VARCHAR},</if>
+	        <if test="updatedBy!=null">updated_by=#{updatedBy,jdbcType=VARCHAR},</if>
+	        <if test="updatedDate!=null">updated_date=#{updatedDate,jdbcType=VARCHAR}</if>
+	        <if test="status!=null">status=#{status,jdbcType=VARCHAR}</if>
+	    </set>
+	    where  menu_id=#{menuId,jdbcType=INTEGER}
+	</update>
+	
+	<select id="get" resultMap="examMenusMap" parameterType="com.test.exam.domain.ExamMenus">
+		select * from exam_menus where nvl(status,'A')='A'
+		and menu_id=#{menuId,jdbcType=INTEGER}
+	</select>
+	
+	<select id="getList" resultMap="examMenusMap" parameterType="java.util.Map">
+		select * from exam_menus where nvl(status,'A')='A'
+	</select>
 	
 </mapper>
