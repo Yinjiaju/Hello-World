@@ -2,15 +2,18 @@ package com.test.exam.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.test.exam.domain.UIResult;
+import com.test.exam.service.UIExamUserService;
 
 @RestController  //实现 Restful HTTP 服务
 public class UIExamUserController {
 
-	
+	@Autowired
+	private UIExamUserService uiExamUserService;
 	@RequestMapping(value="/examUser/insertExamUser")
     public UIResult insertExamUser(
             HttpServletRequest request) throws Exception{
