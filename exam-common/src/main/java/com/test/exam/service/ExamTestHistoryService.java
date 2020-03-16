@@ -24,5 +24,8 @@ public interface ExamTestHistoryService {
 	
 	public Integer updateExamTestHistoryList(List<ExamTestHistory> examTestHistorys) throws Exception;
 	
+	public ExamTestHistory getExamTestHistory(ExamTestHistory examTestHistory) throws Exception;
+	
+	public List<ExamTestHistory> getExamTestHistoryList(ExamTestHistory examTestHistory) throws Exception;
 	
 }

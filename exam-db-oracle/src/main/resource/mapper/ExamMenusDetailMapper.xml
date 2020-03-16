@@ -80,7 +80,7 @@
 		and menu_detail_id=#{menuDetailId,jdbcType=INTEGER}
 	</select>
 	
-	<select id="getList" resultMap="examMenusDetailMap" parameterType="java.util.Map">
+	<select id="getList" resultMap="examMenusDetailMap" parameterType="com.test.exam.domain.ExamMenusDetail">
 		select * from exam_menus_detail where nvl(status,'A')='A'
 	</select>
 	

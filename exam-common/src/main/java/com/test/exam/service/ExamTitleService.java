@@ -25,5 +25,9 @@ public interface ExamTitleService {
 	public Integer updateExamTitleList(List<ExamTitle> examTitles) throws Exception;
 	
 	public Integer getExamTitleIDSEQ() throws Exception;
+
+	public ExamTitle getExamTitle(ExamTitle examTitle) throws Exception;
 	
+	public List<ExamTitle> getExamTitleList(ExamTitle examTitle) throws Exception;
+
 }

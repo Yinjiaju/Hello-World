@@ -27,5 +27,7 @@ public interface ExamMenusService {
 	
 	public Integer getExamMenusIDSEQ() throws Exception;
 	
+	public ExamMenus getExamMenus(ExamMenus examMenus) throws Exception;
 	
+	public List<ExamMenus> getExamMenusList(ExamMenus examMenus) throws Exception;
 }

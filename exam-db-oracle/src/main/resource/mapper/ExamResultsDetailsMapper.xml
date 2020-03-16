@@ -90,7 +90,7 @@
 		and result_id=#{resultId,jdbcType=VARCHAR}
 	</select>
 	
-	<select id="getList" resultMap="examResultsDetailsMap" parameterType="java.util.Map">
+	<select id="getList" resultMap="examResultsDetailsMap" parameterType="com.test.exam.domain.ExamResultsDetails">
 		select * from exam_results_details where nvl(status,'A')='A' 
 		 <if test="titleId!=null">
 		 	and title_id=#{titleId,jdbcType=INTEGER}

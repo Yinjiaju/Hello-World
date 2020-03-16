@@ -1,9 +1,11 @@
 package com.test.exam.service.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.test.exam.dao.ExamMenusDao;
@@ -34,32 +36,52 @@ public class ExamMenusDetailServiceImpl implements ExamMenusDetailService{
     @Override
     public Integer insertExamMenusDetail(ExamMenusDetail examMenuDetail) throws Exception {
         // TODO Auto-generated method stub
-        return examMenusDetailDao.insert(examMenusDetail);
+        return examMenusDetailDao.insert(examMenuDetail);
     }
 
     @Override
     public Integer insertExamMenusDetailList(List<ExamMenusDetail> examMenuDetails) throws Exception {
         // TODO Auto-generated method stub
-        return examMenusDetailDao.insertList(examMenusDetails);
+        return examMenusDetailDao.insertList(examMenuDetails);
     }
 
     @Override
     public Integer updateExamMenusDetail(ExamMenusDetail examMenuDetail) throws Exception {
         // TODO Auto-generated method stub
-        return examMenusDetailDao.update(examMenusDetail);
+        return examMenusDetailDao.update(examMenuDetail);
     }
-
+    
+    @Transactional(rollbackFor = { Exception.class })
     @Override
     public Integer updateExamMenusDetailList(List<ExamMenusDetail> examMenuDetails) throws Exception {
         // TODO Auto-generated method stub
-        return null;
+    	Integer num=0;
+    	for (ExamMenusDetail examMenusDetail : examMenuDetails) {
+    		examMenusDetailDao.update(examMenusDetail);
+    		num++;
+		}
+        return num;
     }
 
     @Override
     public Integer getExamMenusDetailIDSEQ() throws Exception {
         // TODO Auto-generated method stub
-        return null;
+        return examMenusDetailDao.getExamDetailIDSEQ();
     }
+
+	@Override
+	public ExamMenusDetail getExamMenusDetail(ExamMenusDetail examMenuDetail)
+			throws Exception {
+		// TODO Auto-generated method stub
+		return examMenusDetailDao.get(examMenuDetail);
+	}
+
+	@Override
+	public List<ExamMenusDetail> getExamMenusDetailList(
+			ExamMenusDetail examMenuDetail) throws Exception {
+		// TODO Auto-generated method stub
+		return examMenusDetailDao.getList(examMenuDetail);
+	}
 	
 	
 

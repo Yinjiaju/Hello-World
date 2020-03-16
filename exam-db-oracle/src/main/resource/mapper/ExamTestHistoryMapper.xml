@@ -91,7 +91,7 @@
 		and test_id=#{testId,jdbcType=VARCHAR}
 	</select>
 	
-	<select id="getList" resultMap="examTestHistoryMap" parameterType="java.util.Map">
+	<select id="getList" resultMap="examTestHistoryMap" parameterType="com.test.exam.domain.ExamTestHistory">
 		select * from exam_test_history where nvl(status,'A')='A' 
 		 <if test="testUserId!=null">
 		 	and test_userId=#{testUserId,jdbcType=INTEGER}

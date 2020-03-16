@@ -25,5 +25,7 @@ public interface ExamResultsDetailsService {
 	
 	public Integer updateExamResultsDetailsList(List<ExamResultsDetails> examResultsDetails) throws Exception;
 	
+	public ExamResultsDetails getExamResultsDetails(ExamResultsDetails examMenus) throws Exception;
 	
+	public List<ExamResultsDetails> getExamResultsDetailsList(ExamResultsDetails examMenus) throws Exception;
 }

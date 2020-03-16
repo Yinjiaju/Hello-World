@@ -25,4 +25,8 @@ public interface ExamUserService {
 	
 	public Integer getExamUserIDSEQ() throws Exception;
 	
+	public ExamUser getExamUser(ExamUser examUser) throws Exception;
+	
+	public List<ExamUser> getExamUserList(ExamUser examUser) throws Exception;
+
 }

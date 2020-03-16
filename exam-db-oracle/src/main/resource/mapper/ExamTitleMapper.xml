@@ -98,7 +98,7 @@
 		and title_id=#{titleId,jdbcType=INTEGER}
 	</select>
 	
-	<select id="getList" resultMap="examTitleMap" parameterType="java.util.Map">
+	<select id="getList" resultMap="examTitleMap" parameterType="com.test.exam.domain.ExamTitle">
 		select * from exam_title where nvl(status,'A')='A'
 		 <if test="titleType!=null">
 		 	and title_type=#{titleType,jdbcType=INTEGER}

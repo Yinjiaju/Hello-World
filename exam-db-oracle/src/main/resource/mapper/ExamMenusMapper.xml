@@ -75,7 +75,7 @@
 		and menu_id=#{menuId,jdbcType=INTEGER}
 	</select>
 	
-	<select id="getList" resultMap="examMenusMap" parameterType="java.util.Map">
+	<select id="getList" resultMap="examMenusMap" parameterType="com.test.exam.domain.ExamMenus">
 		select * from exam_menus where nvl(status,'A')='A'
 	</select>
 	

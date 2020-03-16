@@ -1,6 +1,7 @@
 package com.test.exam.service;
 
 import java.util.List;
+import java.util.Map;
 
 import com.test.exam.domain.ExamMenus;
 import com.test.exam.domain.ExamMenusDetail;
@@ -26,4 +27,7 @@ public interface ExamMenusDetailService {
 	
 	public Integer getExamMenusDetailIDSEQ() throws Exception;
 	
+	public ExamMenusDetail getExamMenusDetail(ExamMenusDetail examMenuDetail) throws Exception;
+	
+	public List<ExamMenusDetail> getExamMenusDetailList(ExamMenusDetail examMenuDetail) throws Exception;
 }
