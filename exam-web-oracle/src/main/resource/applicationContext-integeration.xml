@@ -22,4 +22,15 @@
  
     <!-- 这里是具体实现类,id和上面的暴露的服务接口ref要一致,dubbo就是通过这个来注册对应的服务 -->
     <!-- <bean id="goodsService" class="com.zdd.dubbo.provider.GoodsServiceImpl"></bean> -->
+    <!-- exam 相关的 -->
+   <!--  <dubbo:reference check="false" id="ExamMenusDetailServiceRefer" interface="com.test.exam.service.ExamMenusDetailService" version="ExamMenusDetailService" timeout="1800000"/>
+    <dubbo:reference check="false" id="ExamMenusServiceRefer" interface="com.test.exam.service.ExamMenusService" version="ExamMenusService" timeout="1800000"/>
+    <dubbo:reference check="false" id="ExamResultsDetailsServiceRefer" interface="com.test.exam.service.ExamResultsDetailsService" version="ExamResultsDetailsService" timeout="1800000"/>
+    <dubbo:reference check="false" id="ExamTestHistoryDetailServiceRefer" interface="com.test.exam.service.ExamTestHistoryDetailService" version="ExamTestHistoryDetailService" timeout="1800000"/>
+    <dubbo:reference check="false" id="ExamTestHistoryServiceRefer" interface="com.test.exam.service.ExamTestHistoryService" version="ExamTestHistoryService" timeout="1800000"/>
+    <dubbo:reference check="false" id="ExamTitleServiceRefer" interface="com.test.exam.service.ExamTitleService" version="ExamTitleService" timeout="1800000"/>
+    <dubbo:reference check="false" id="ExamUserServiceRefer" interface="com.test.exam.service.ExamUserService" version="ExamUserService" timeout="1800000"/>
+     -->
+    
+    
 </beans>

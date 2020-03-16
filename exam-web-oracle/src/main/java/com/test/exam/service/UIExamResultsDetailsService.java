@@ -10,7 +10,7 @@ import com.test.exam.domain.ExamTestHistoryDetail;
 import com.test.exam.domain.ExamTitle;
 import com.test.exam.domain.ExamUser;
 
-public interface ExamResultsDetailsService {
+public interface UIExamResultsDetailsService {
 	
 	
 	/**
