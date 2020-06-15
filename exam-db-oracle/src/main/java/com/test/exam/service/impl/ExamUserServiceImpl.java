@@ -24,62 +24,59 @@ import com.test.exam.domain.ExamUser;
 import com.test.exam.service.ExamService;
 import com.test.exam.service.ExamUserService;
 
-@Service(version="examUserService")   //属于Dubbo的@Service注解，非Spring  作用：暴露服务
+@Service(version = "examUserService")
+// 属于Dubbo的@Service注解，非Spring 作用：暴露服务
 @Component
-public class ExamUserServiceImpl implements ExamUserService{
-	
-	@Autowired
-	private ExamUserDao examUserDao;
+public class ExamUserServiceImpl implements ExamUserService {
 
-	@Override
-	public Integer insertExamUser(ExamUser examUser) throws Exception {
-		// TODO Auto-generated method stub
-		return examUserDao.insert(examUser);
-	}
+    @Autowired
+    private ExamUserDao examUserDao;
 
-	@Override
-	public Integer insertExamUserList(List<ExamUser> examUsers)
-			throws Exception {
-		// TODO Auto-generated method stub
-		return examUserDao.insertList(examUsers);
-	}
+    @Override
+    public Integer insertExamUser(ExamUser examUser) throws Exception {
+        // TODO Auto-generated method stub
+        return examUserDao.insert(examUser);
+    }
 
-	@Override
-	public Integer updateExamUser(ExamUser examUser) throws Exception {
-		// TODO Auto-generated method stub
-		return examUserDao.update(examUser);
-	}
-	
-	@Transactional(rollbackFor = { Exception.class })
-	@Override
-	public Integer updateExamUserList(List<ExamUser> examUsers)
-			throws Exception {
-		// TODO Auto-generated method stub
-		Integer num = 0;
-		for (ExamUser examUser : examUsers) {
-			examUserDao.update(examUser);
-			num++;
-		}
-		return num;
-	}
+    @Override
+    public Integer insertExamUserList(List<ExamUser> examUsers) throws Exception {
+        // TODO Auto-generated method stub
+        return examUserDao.insertList(examUsers);
+    }
 
-	@Override
-	public Integer getExamUserIDSEQ() throws Exception {
-		// TODO Auto-generated method stub
-		return examUserDao.getExamUserSEQ();
-	}
+    @Override
+    public Integer updateExamUser(ExamUser examUser) throws Exception {
+        // TODO Auto-generated method stub
+        return examUserDao.update(examUser);
+    }
 
-	@Override
-	public ExamUser getExamUser(ExamUser examUser) throws Exception {
-		// TODO Auto-generated method stub
-		return examUserDao.get(examUser);
-	}
+    @Transactional(rollbackFor = { Exception.class })
+    @Override
+    public Integer updateExamUserList(List<ExamUser> examUsers) throws Exception {
+        // TODO Auto-generated method stub
+        Integer num = 0;
+        for (ExamUser examUser : examUsers) {
+            examUserDao.update(examUser);
+            num++;
+        }
+        return num;
+    }
 
-	@Override
-	public List<ExamUser> getExamUserList(ExamUser examUser) throws Exception {
-		// TODO Auto-generated method stub
-		return examUserDao.getList(examUser);
-	}
-	
-	
+    @Override
+    public Integer getExamUserIDSEQ() throws Exception {
+        // TODO Auto-generated method stub
+        return examUserDao.getExamUserSEQ();
+    }
+
+    @Override
+    public ExamUser getExamUser(ExamUser examUser) throws Exception {
+        return examUserDao.get(examUser);
+    }
+
+    @Override
+    public List<ExamUser> getExamUserList(ExamUser examUser) throws Exception {
+        // TODO Auto-generated method stub
+        return examUserDao.getList(examUser);
+    }
+
 }

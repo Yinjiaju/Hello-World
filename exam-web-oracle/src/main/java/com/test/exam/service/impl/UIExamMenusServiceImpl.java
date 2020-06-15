@@ -28,7 +28,6 @@ public class UIExamMenusServiceImpl implements UIExamMenusService{
 	@Override
 	public Integer insertExamMenusList(List<ExamMenus> examMenus)
 			throws Exception {
-		// TODO Auto-generated method stub
 		return examMenusService.insertExamMenusList(examMenus);
 	}
 

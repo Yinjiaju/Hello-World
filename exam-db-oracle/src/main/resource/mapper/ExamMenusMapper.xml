@@ -12,7 +12,7 @@
 		<result property="status" column="status" />
 	</resultMap>
 	
-	<select id="getExamMenusSEQ" resultMap="java.util.Integer" >
+	<select id="getExamMenusSEQ" resultType="Integer" >
 		select * from EXAM_MENU_ID_SEQ 
 	</select>
 	

@@ -13,7 +13,7 @@
 		<result property="status" column="status" />
 	</resultMap>
 	
-	<select id="getExamDetailIDSEQ" resultMap="java.util.Integer" >
+	<select id="getExamDetailIDSEQ" resultType="Integer" >
 		select * from EXAM_MENU_DETAIL_ID_SEQ 
 	</select>
 	

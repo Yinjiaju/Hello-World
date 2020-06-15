@@ -16,7 +16,7 @@
 		<result property="status" column="status" />
 	</resultMap>
 	
-	<select id="getExamTitleSEQ" resultMap="java.util.Integer" >
+	<select id="getExamTitleSEQ" resultType="Integer" >
 		select * from EXAM_TITLE_ID_SEQ 
 	</select>
 	

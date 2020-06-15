@@ -12,20 +12,20 @@ import com.test.exam.domain.ExamUser;
 
 public interface ExamTestHistoryService {
 
-	/**
-	 * 关于exam_test_history的相关操作
-	 * 
-	 */
-	public Integer insertExamTestHistory(ExamTestHistory examTestHistory) throws Exception;
-	
-	public Integer insertExamTestHistoryList(List<ExamTestHistory> examTestHistorys) throws Exception;
-	
-	public Integer updateExamTestHistory(ExamTestHistory examTestHistory) throws Exception;
-	
-	public Integer updateExamTestHistoryList(List<ExamTestHistory> examTestHistorys) throws Exception;
-	
-	public ExamTestHistory getExamTestHistory(ExamTestHistory examTestHistory) throws Exception;
-	
-	public List<ExamTestHistory> getExamTestHistoryList(ExamTestHistory examTestHistory) throws Exception;
-	
+    /**
+     * 关于exam_test_history的相关操作
+     * 
+     */
+    public Integer insertExamTestHistory(ExamTestHistory examTestHistory) throws Exception;
+
+    public Integer insertExamTestHistoryList(List<ExamTestHistory> examTestHistorys) throws Exception;
+
+    public Integer updateExamTestHistory(ExamTestHistory examTestHistory) throws Exception;
+
+    public Integer updateExamTestHistoryList(List<ExamTestHistory> examTestHistorys) throws Exception;
+
+    public ExamTestHistory getExamTestHistory(ExamTestHistory examTestHistory) throws Exception;
+
+    public List<ExamTestHistory> getExamTestHistoryList(ExamTestHistory examTestHistory) throws Exception;
+
 }

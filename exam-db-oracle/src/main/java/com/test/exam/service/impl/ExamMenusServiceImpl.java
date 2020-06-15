@@ -41,7 +41,6 @@ public class ExamMenusServiceImpl implements ExamMenusService{
 	@Override
 	public Integer insertExamMenusList(List<ExamMenus> examMenus)
 			throws Exception {
-		// TODO Auto-generated method stub
 		return examMenusDao.insertList(examMenus);
 	}
 

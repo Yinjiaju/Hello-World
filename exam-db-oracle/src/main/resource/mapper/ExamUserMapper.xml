@@ -1,100 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.test.exam.dao.ExamUserDao">
-
-
 	<resultMap id="examUserMap" type="com.test.exam.domain.ExamUser">
-		<result property="userId" column="title_id" />
-		<result property="userName" column="title_name" />
-		<result property="password" column="title_type" />
-		<result property="status" column="title_type_name" />
-		<result property="roleType" column="added_by" />
+		<result property="userId" column="user_id" />
+		<result property="userName" column="user_name" />
+		<result property="password" column="password" />
+		<result property="status" column="status" />
+		<result property="roleType" column="role_type" />
 		<result property="addedBy" column="added_by" />
 		<result property="addedDate" column="added_date" />
 		<result property="updatedBy" column="updated_by" />
 		<result property="updatedDate" column="updated_date" />
-		<result property="userMenus" column="title_level" />
+		<result property="userMenus" column="user_menus"/>
 	</resultMap>
-	
-	<select id="getExamUserSEQ" resultMap="java.util.Integer" >
-		select * from EXAM_USER_ID_SEQ 
+
+	<select id="getExamUserSEQ" resultType="Integer">
+		select * from EXAM_USER_ID_SEQ
 	</select>
-	
-	<insert id="insert"  parameterType="com.test.exam.domain.ExamUser" >
+
+	<insert id="insert" parameterType="com.test.exam.domain.ExamUser">
 		insert into exam_user (
-			user_id,
-			user_name,
-			password,
-			status,
-			role_type,
-			added_by,
-			added_date,
-			updated_by,
-			updated_date,
-			user_menus
+		user_id,
+		user_name,
+		password,
+		status,
+		role_type,
+		added_by,
+		added_date,
+		updated_by,
+		updated_date,
+		user_menus
 		)values(
-			#{userId,jdbcType=INTEGER},
-			#{userName,jdbcType=VARCHAR},
-			#{password,jdbcType=VARCHAR},
-			#{status,jdbcType=VARCHAR},
-			#{roleType,jdbcType=VARCHAR},
-			#{addedBy,jdbcType=VARCHAR},
-			#{addedDate,jdbcType=VARCHAR},
-			#{updatedBy,jdbcType=VARCHAR},
-			#{updatedDate,jdbcType=VARCHAR},
-			#{userMenus,jdbcType=VARCHAR}
+		#{userId,jdbcType=INTEGER},
+		#{userName,jdbcType=VARCHAR},
+		#{password,jdbcType=VARCHAR},
+		#{status,jdbcType=VARCHAR},
+		#{roleType,jdbcType=VARCHAR},
+		#{addedBy,jdbcType=VARCHAR},
+		#{addedDate,jdbcType=VARCHAR},
+		#{updatedBy,jdbcType=VARCHAR},
+		#{updatedDate,jdbcType=VARCHAR},
+		#{userMenus,jdbcType=VARCHAR}
 		)
 	</insert>
-	
+
 	<insert id="insertList" parameterType="java.util.List">
 		insert into exam_user (
-			user_id,
-			user_name,
-			password,
-			status,
-			role_type,
-			added_by,
-			added_date,
-			updated_by,
-			updated_date,
-			user_menus
+		user_id,
+		user_name,
+		password,
+		status,
+		role_type,
+		added_by,
+		added_date,
+		updated_by,
+		updated_date,
+		user_menus
 		) values
-			<foreach collection="list" item="item" index="index" separator=",">
-				(
-					#{item.userId,jdbcType=INTEGER},
-					#{item.userName,jdbcType=VARCHAR},
-					#{item.password,jdbcType=VARCHAR},
-					#{item.status,jdbcType=VARCHAR},
-					#{item.roleType,jdbcType=VARCHAR},
-					#{item.addedBy,jdbcType=VARCHAR},
-					#{item.addedDate,jdbcType=VARCHAR},
-					#{item.updatedBy,jdbcType=VARCHAR},
-					#{item.updatedDate,jdbcType=VARCHAR},
-					#{item.userMenus,jdbcType=VARCHAR}
-				)
-		     </foreach>		
+		<foreach collection="list" item="item" index="index"
+			separator=",">
+			(
+			#{item.userId,jdbcType=INTEGER},
+			#{item.userName,jdbcType=VARCHAR},
+			#{item.password,jdbcType=VARCHAR},
+			#{item.status,jdbcType=VARCHAR},
+			#{item.roleType,jdbcType=VARCHAR},
+			#{item.addedBy,jdbcType=VARCHAR},
+			#{item.addedDate,jdbcType=VARCHAR},
+			#{item.updatedBy,jdbcType=VARCHAR},
+			#{item.updatedDate,jdbcType=VARCHAR},
+			#{item.userMenus,jdbcType=VARCHAR}
+			)
+		</foreach>
 	</insert>
-	
+
 	<update id="update" parameterType="com.test.exam.domain.ExamUser">
-		update exam_user 
-	    <set>
-	        <if test="updatedBy!=null">updated_by=#{updatedBy,jdbcType=VARCHAR},</if>
-	        <if test="updatedDate!=null">updated_date=#{updatedDate,jdbcType=VARCHAR}</if>
-	        <if test="status!=null">status=#{status,jdbcType=VARCHAR}</if>
-	    </set>
-	    where  user_id=#{userId,jdbcType=INTEGER}
+		update exam_user
+		<set>
+			<if test="updatedBy!=null">updated_by=#{updatedBy,jdbcType=VARCHAR},</if>
+			<if test="updatedDate!=null">updated_date=#{updatedDate,jdbcType=VARCHAR}</if>
+			<if test="status!=null">status=#{status,jdbcType=VARCHAR}</if>
+		</set>
+		where user_id=#{userId,jdbcType=INTEGER}
 	</update>
-	
-	<select id="get" resultMap="examUserMap" parameterType="com.test.exam.domain.ExamUser">
-		select * from exam_user where nvl(status,'A')='A'
-		and user_id=#{userId,jdbcType=INTEGER}
+
+	<select id="get" resultType="com.test.exam.domain.ExamUser" parameterType="com.test.exam.domain.ExamUser">
+		select * from exam_user where nvl(status,'A')='A'  and rownum=1
+		<!-- <if test="{userName!=null">
+			and upper(user_name) = upper(#{userName,jdbcType=VARCHAR})
+		</if> -->
 	</select>
-	
+
 	<select id="getList" resultMap="examUserMap" parameterType="com.test.exam.domain.ExamUser">
 		select * from exam_user where 1=1
-		 <if test="status!=null">
-		 	and status=#{status,jdbcType=VARCHAR}
-		 </if>
+		<if test="status!=null">
+			and status=#{status,jdbcType=VARCHAR}
+		</if>
 	</select>
-	
+
 </mapper>

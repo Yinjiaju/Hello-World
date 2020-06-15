@@ -16,7 +16,7 @@ import com.test.exam.service.UIExamUserService;
 public class UIExamUserServiceImpl implements UIExamUserService{
 	
 	@Reference(timeout=1800000,version="examUserService",check=false)
-    private ExamUserService examUserService;
+        private ExamUserService examUserService;
 
 	@Override
 	public Integer insertExamUser(ExamUser examUser) throws Exception {
@@ -52,7 +52,6 @@ public class UIExamUserServiceImpl implements UIExamUserService{
 
 	@Override
 	public ExamUser getExamUser(ExamUser examUser) throws Exception {
-		// TODO Auto-generated method stub
 		return examUserService.getExamUser(examUser);
 	}
 
