@@ -26,7 +26,5 @@ import com.alibaba.dubbo.config.spring.context.annotation.EnableDubbo;
 public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class,args);
-        
     }
-    
 }
