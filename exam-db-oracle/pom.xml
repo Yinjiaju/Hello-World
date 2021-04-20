@@ -19,6 +19,12 @@
 		<mysql-connector>5.1.39</mysql-connector>
 		<oracle-version>11.2.0</oracle-version>
 	</properties>
+	
+	<!-- 版本管理 -->
+	<dependencyManagement>
+		
+		
+	</dependencyManagement>
 
 
 	<dependencies>
