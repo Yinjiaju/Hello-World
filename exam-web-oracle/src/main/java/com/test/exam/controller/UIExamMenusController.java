@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.test.exam.domain.ExamMenus;
 import com.test.exam.domain.UIResult;
 import com.test.exam.service.UIExamMenusService;
-import com.test.exam.utils.dateUtil;
+import com.test.exam.utils.DateUtil;
 
 @RestController
 // 实现 Restful HTTP 服务
@@ -74,7 +74,7 @@ public class UIExamMenusController {
     public List<ExamMenus> getExamsTestDemo () throws Exception{
         List<ExamMenus> ls = new ArrayList<ExamMenus>();
         for (int i = 0; i < 3; i++) {
-            ExamMenus e1 = new ExamMenus(uiExamMenusService.getExamMenusIDSEQ(), "1", "admin", dateUtil.format(new Date()), "admin", dateUtil.format(new Date()), "A");
+            ExamMenus e1 = new ExamMenus(uiExamMenusService.getExamMenusIDSEQ(), "1", "admin", DateUtil.format(new Date()), "admin", DateUtil.format(new Date()), "A");
             ls.add(e1);
         }
         return ls ;

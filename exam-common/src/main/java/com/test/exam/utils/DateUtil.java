@@ -3,7 +3,7 @@ package com.test.exam.utils;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class dateUtil {
+public class DateUtil {
 
     private static final String DEFAULT_DATE_FORMAT = "yyyy-MM-dd HH:mm:ss.SSS";
 
